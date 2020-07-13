@@ -1,0 +1,69 @@
+@import "src/BS.scss";
+
+.bio {
+  // General Styles
+  margin-top: 30px;
+
+  img {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+  }
+
+  .bio_text {
+    background-color: darken(theme-color("dark"), 2%);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .linkDiv {
+    a {
+      border-bottom: 2px dashed theme-color("primary");
+    }
+  }
+
+  // Large Styles
+  &.large {
+    img {
+      margin: 2px auto;
+    }
+    .bio_text {
+      margin-left: -1.5em;
+
+      .linkDiv {
+        font-size: 1.5em;
+        margin: 10px;
+      }
+    }
+  }
+
+  // Small Styles
+  &.small {
+    h1 {
+      padding: 15px;
+      border-bottom: 5px solid theme-color("primary");
+      margin-bottom: 25px;
+    }
+
+    .bio_text {
+      p {
+        text-align: justify;
+        font-size: 1.25em;
+      }
+
+      .linkDiv {
+        margin: 20px;
+        font-size: 2em;
+        text-align: center;
+      }
+    }
+
+    img {
+      margin: 0 auto 25px auto;
+    }
+
+    .bio_text {
+      margin-left: none;
+    }
+  }
+}

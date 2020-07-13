@@ -1,42 +1,10 @@
-$theme-colors: (
-    'primary': #b2dca2,
-    'test': blue
-);
+@import "src/BS.scss";
 
-@import '~bootstrap/scss/bootstrap';
-
-body {
-    background-color: darken(theme-color('dark'), 2%);
+html,
+#root {
+  background-color: darken(theme-color("dark"), 2%);
 }
 
 .mainContainer {
-    background-color: theme-color('dark');
-
-    .topBar {
-        .navbar-brand,
-        a {
-            font-size: 1.5em;
-            margin-right: 1.5em;
-        }
-    }
-
-    .intro {
-        margin-top: 25px;
-
-        img {
-            max-width: 250px;
-            margin: 0 auto;
-        }
-
-        .bio {
-            // max-width: 90%;
-            background-color: darken(theme-color('dark'), 1%);
-            border-radius: 5px;
-            margin-left: -1em;
-        }
-
-        .links {
-            font-size: 2em;
-        }
-    }
+  background-color: theme-color("dark");
 }
