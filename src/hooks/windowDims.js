@@ -11,6 +11,7 @@ const getCurBreakpoint = (curSize) => {
   }
 };
 
+// https://stackoverflow.com/questions/58398109/useeffect-hook-not-firing-on-orientation-change
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
