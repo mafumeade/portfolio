@@ -22,7 +22,7 @@ export default class TopBar extends Component {
     const { hoveredLink } = this.state;
 
     const linkRows = LINKS.map(({ icon, text, shortText, href }) => {
-      const showTextClass = hoveredLink === href || breakpoint < 3 ? "showText" : "";
+      const showTextClass = hoveredLink === href || breakpoint < 4 ? "showText" : "";
       return (
         <Col
           key={href}
@@ -39,7 +39,7 @@ export default class TopBar extends Component {
         >
           <a href={href} target="_blank" rel="noopener noreferrer" alt={text} relrel="noopener noreferrer">
             <i className={`${icon} icon`} />{" "}
-            {breakpoint > 0 && <span className="text">{breakpoint > 1 ? text : shortText || text}</span>}
+            {breakpoint > 0 && <span className="text">{breakpoint > 3 ? text : shortText || text}</span>}
           </a>
         </Col>
       );

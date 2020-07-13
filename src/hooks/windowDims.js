@@ -4,7 +4,7 @@ const breakpoints = [0, 576, 768, 992, 1200, Infinity];
 
 const getCurBreakpoint = (curSize) => {
   for (let i = 0; i < breakpoints.length; i++) {
-    if (curSize > breakpoints[i]) {
+    if (curSize >= breakpoints[i]) {
       continue;
     }
     return i - 1;
