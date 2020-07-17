@@ -1,0 +1,75 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.level2,
+.level3 {
+    page-break-inside: avoid;
+}
+
+.level3 {
+    margin-bottom: 50px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 3em;
+}
+
+h2 {
+    color: grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#headerLinks {
+    display: grid;
+    grid-gap: 0;
+    grid-auto-flow: column;
+    border-top: 1px solid darkslategray;
+    border-bottom: 1px solid darkslategray;
+    margin-bottom: 25px;
+}
+
+#headerLinks a {
+    display: block;
+    color: skyblue;
+    text-decoration: none;
+}
+
+.headerPart1 {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.level2 * {
+    text-align: justify;
+    line-height: 1.2em;
+}
+
+li {
+    margin-top: 10px;
+}
+
+#Experience > div:first-of-type > ul > li {
+    font-weight: bold;
+}
+
+#Experience > div:first-of-type > ul > li * {
+    font-weight: normal;
+}
+
+.page-break {
+    page-break-after: always;
+}
+
+/* TODO: Style cover page */
