@@ -7,6 +7,8 @@ import TopBar from "./components/navbar/TopBar";
 import Bio from "./components/Bio/Bio";
 import useWindowDimensions from "./hooks/windowDims";
 
+//TODO: Move images out of git
+
 import "./App.scss";
 import { lorem } from "./util/Lorem";
 

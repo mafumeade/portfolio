@@ -4,21 +4,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './styles.scss';
 import useWindowDimensions from '../../hooks/windowDims';
 
-// TODO: Refactor this data
 const BIO_TEXT = [
     'A full stack JavaScript developer who hates writing bios about himself',
     'Scroll down to see some of my featured projects'
 ].map((t, n) => <p key={n}>{t}</p>);
 
-const LINKS = [
-    {
-        icon: 'fas fa-envelope',
-        text: 'email@MatthewMeade.ca',
-        href: 'mailto:email@MatthewMeade.ca'
-    },
-    { icon: 'fab fa-github', text: 'GitHub', href: 'https://github.com/mafumeade' },
-    { icon: 'fas fa-file-alt', text: 'Resume', href: 'https://MatthewMeade.ca/resume.pdf' }
-].map(({ icon, text, href }) => (
+const LINKS = require("../../data/generalLinks.json").map(({ icon, text, href }) => (
     <div className='linkDiv' key={href}>
         <a href={href} className='text-white' target='_blank' rel='noopener noreferrer'>
             <i className={`${icon} text-primary`} /> {text}

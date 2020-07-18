@@ -2,17 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './styles.scss';
 
-// TODO: Refactor this data
-const LINKS = [
-    {
-        icon: 'fas fa-envelope',
-        text: 'email@MatthewMeade.ca',
-        shortText: 'Email',
-        href: 'mailto:email@MatthewMeade.ca'
-    },
-    { icon: 'fab fa-github', text: 'GitHub', href: 'https://github.com/mafumeade' },
-    { icon: 'fas fa-file-alt', text: 'Resume', href: 'https://MatthewMeade.ca/resume.pdf' }
-];
+const LINKS = require("../../data/generalLinks.json")
+
 const HOVER_TIMEOUT_MS = 1500;
 
 export default class TopBar extends Component {

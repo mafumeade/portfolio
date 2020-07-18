@@ -1,0 +1,18 @@
+[
+  {
+    "icon": "fas fa-envelope",
+    "text": "email@MatthewMeade.ca",
+    "shortText": "email",
+    "href": "mailto:email@MatthewMeade.ca"
+  },
+  {
+    "icon": "fab fa-github",
+    "text": "GitHub",
+    "href": "https://github.com/mafumeade"
+  },
+  {
+    "icon": "fas fa-file-alt",
+    "text": "Resume",
+    "href": "https://MatthewMeade.ca/resume.pdf"
+  }
+]
