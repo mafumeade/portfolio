@@ -2,7 +2,16 @@
 
 .bio {
   // General Styles
-  margin-top: 30px;
+  // margin: 50px 0;
+  padding: 50px 0 25px 0;
+
+  @media (min-width: 768px) {
+    .imgContainer {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
 
   img {
     width: 100%;
@@ -11,7 +20,7 @@
   }
 
   .bio_text {
-    background-color: darken(theme-color("dark"), 2%);
+    background-color: darken(theme-color("dark"), 5%);
     border-radius: 5px;
     padding: 10px;
   }
@@ -19,6 +28,13 @@
   .linkDiv {
     a {
       border-bottom: 2px dashed theme-color("primary");
+      text-decoration: none;
+    }
+
+    &:hover {
+      a {
+        border-bottom: 2px solid theme-color("primary");
+      }
     }
   }
 
@@ -32,7 +48,7 @@
 
       .linkDiv {
         font-size: 1.5em;
-        margin: 10px;
+        margin: 10px 0;
       }
     }
   }

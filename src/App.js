@@ -8,7 +8,8 @@ import Bio from "./components/Bio/Bio";
 import useWindowDimensions from "./hooks/windowDims";
 
 import "./App.scss";
-import { lorem } from "./util/Lorem";
+
+import Markdown from "./components/Markdown/Markdown";
 
 function App() {
   const { breakpoint } = useWindowDimensions();
@@ -23,7 +24,7 @@ function App() {
         <Container>
           <Row>
             <Col>
-              <p className="text-secondary text-justify mt-5">{lorem(10e3 - 10)}</p>
+              <Markdown text={"# To Do"} />
             </Col>
           </Row>
         </Container>
