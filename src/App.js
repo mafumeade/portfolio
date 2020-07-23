@@ -1,36 +1,31 @@
-import React from "react";
-import "./App.scss";
+import React from 'react';
+import './App.scss';
 
-import "@fortawesome/fontawesome-free/js/all";
-import { Container, Row, Col } from "react-bootstrap";
-import TopBar from "./components/navbar/TopBar";
-import Bio from "./components/Bio/Bio";
-import useWindowDimensions from "./hooks/windowDims";
+import '@fortawesome/fontawesome-free/js/all';
+import { Container, Row, Col } from 'react-bootstrap';
+import TopBar from './components/navbar/TopBar';
+import Bio from './components/Bio/Bio';
+import useWindowDimensions from './hooks/windowDims';
 
-import "./App.scss";
+import './App.scss';
+import Showcase from './components/Showcase/Showcase';
 
-import Markdown from "./components/Markdown/Markdown";
+// import Markdown from "./components/Markdown/Markdown";
 
 function App() {
-  const { breakpoint } = useWindowDimensions();
+    const { breakpoint } = useWindowDimensions();
 
-  return (
-    <div>
-      <Container bg="dark" variant="dark" className="mainContainer">
-        <TopBar breakpoint={breakpoint} />
+    return (
+        <div>
+            <Container bg='dark' variant='dark' className='mainContainer'>
+                <TopBar breakpoint={breakpoint} />
 
-        <Bio />
+                <Bio />
 
-        <Container>
-          <Row>
-            <Col>
-              <Markdown text={"# To Do"} />
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-    </div>
-  );
+                <Showcase />
+            </Container>
+        </div>
+    );
 }
 
 export default App;

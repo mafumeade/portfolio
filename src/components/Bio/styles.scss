@@ -1,86 +1,86 @@
-@import "src/BS.scss";
+@import 'src/BS.scss';
 
 .bio {
-  // General Styles
-  // margin: 50px 0;
-  padding: 50px 0 25px 0;
+    // General Styles
+    // margin: 50px 0;
+    padding: 50px 0 0 0;
 
-  @media (min-width: 768px) {
-    .imgContainer {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-  }
-
-  img {
-    width: 100%;
-    max-width: 250px;
-    display: block;
-  }
-
-  .bio_text {
-    background-color: darken(theme-color("dark"), 5%);
-    border-radius: 5px;
-    padding: 10px;
-  }
-
-  .linkDiv {
-    a {
-      border-bottom: 2px dashed theme-color("primary");
-      text-decoration: none;
-    }
-
-    &:hover {
-      a {
-        border-bottom: 2px solid theme-color("primary");
-      }
-    }
-  }
-
-  // Large Styles
-  &.large {
-    img {
-      margin: 2px auto;
-    }
-    .bio_text {
-      margin-left: -1.5em;
-
-      .linkDiv {
-        font-size: 1.5em;
-        margin: 10px 0;
-      }
-    }
-  }
-
-  // Small Styles
-  &.small {
-    h1 {
-      padding: 15px;
-      border-bottom: 5px solid theme-color("primary");
-      margin-bottom: 25px;
-    }
-
-    .bio_text {
-      p {
-        text-align: justify;
-        font-size: 1.25em;
-      }
-
-      .linkDiv {
-        margin: 20px 0;
-        font-size: 1.5em;
-        white-space: nowrap;
-        text-align: center;
-      }
+    @media (min-width: 768px) {
+        .imgContainer {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
     }
 
     img {
-      margin: 0 auto 25px auto;
+        width: 100%;
+        max-width: 250px;
+        display: block;
     }
 
     .bio_text {
-      margin-left: none;
+        background-color: darken(theme-color('dark'), 5%);
+        border-radius: 5px;
+        padding: 10px;
     }
-  }
+
+    .linkDiv {
+        a {
+            border-bottom: 2px dashed theme-color('primary');
+            text-decoration: none;
+        }
+
+        &:hover {
+            a {
+                border-bottom: 2px solid theme-color('primary');
+            }
+        }
+    }
+
+    // Large Styles
+    &.large {
+        img {
+            margin: 2px auto;
+        }
+        .bio_text {
+            margin-left: -1.5em;
+
+            .linkDiv {
+                font-size: 1.5em;
+                margin: 10px 0;
+            }
+        }
+    }
+
+    // Small Styles
+    &.small {
+        h1 {
+            padding: 15px;
+            border-bottom: 5px solid theme-color('primary');
+            margin-bottom: 25px;
+        }
+
+        .bio_text {
+            p {
+                text-align: justify;
+                font-size: 1.25em;
+            }
+
+            .linkDiv {
+                margin: 20px 0;
+                font-size: 1.5em;
+                white-space: nowrap;
+                text-align: center;
+            }
+        }
+
+        img {
+            margin: 0 auto 25px auto;
+        }
+
+        .bio_text {
+            margin-left: none;
+        }
+    }
 }
