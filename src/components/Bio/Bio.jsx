@@ -8,6 +8,7 @@ import { cdnImg, coverLinks } from "../../data/portfolioData";
 const BIO_TEXT = [
   "A full stack JavaScript developer who hates writing bios about himself",
   "Scroll down to see some of my featured projects",
+  "Work in progress",
 ].map((t, n) => <p key={n}>{t}</p>);
 
 const LINKS = coverLinks.map(({ icon, text, href }) => (
