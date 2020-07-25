@@ -31,11 +31,12 @@ export default class Showcase extends Component {
 
     const { showItem, TO, selectedItem: curSelected } = this.state;
 
-    if (selectedItem === curSelected) {
+    if (selectedItem === curSelected && showItem) {
       return;
     }
+
     if (!showItem) {
-      return this.setState({ selectedItem, showItem: true });
+      return this.setState({ selectedItem, showItem: true, transitioning: false });
     }
 
     clearTimeout(TO);
