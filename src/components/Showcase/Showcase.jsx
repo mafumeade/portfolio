@@ -15,7 +15,6 @@ export default class Showcase extends Component {
         this.state = {
             selectedItem: -1,
             showItem: false,
-            TO: 0,
             transitioning: false
         };
     }
@@ -30,7 +29,7 @@ export default class Showcase extends Component {
         const top = document.querySelector('.showcase .header').offsetTop - 50;
         window.scrollTo({ top, behavior: 'smooth' });
 
-        const { showItem, TO, selectedItem: curSelected } = this.state;
+        const { showItem, selectedItem: curSelected } = this.state;
 
         if (selectedItem === curSelected && showItem) {
             return;
@@ -40,11 +39,7 @@ export default class Showcase extends Component {
             return this.setState({ selectedItem, showItem: true, transitioning: false });
         }
 
-        clearTimeout(TO);
-        const _to = setTimeout(() => {
-            this.setState({ selectedItem, showItem: true, transitioning: false });
-        }, 1250);
-        this.setState({ TO: _to, transitioning: true, showItem: false });
+        this.setState({ selectedItem, showItem: true, transitioning: false });
     };
 
     render() {
