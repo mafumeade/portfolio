@@ -66,8 +66,15 @@ function Header({ selectedItem, setSelected }) {
 function ItemCard({ item, selected, setSelected }) {
     const className = selected ? 'selected' : '';
 
+    const handleClick = () => {
+        setSelected(item.key);
+
+        const top = document.querySelector('.showcase .header').offsetTop - 50;
+        window.scrollTo({ top, behavior: 'smooth' });
+    };
+
     return (
-        <Card className={className} onClick={() => setSelected(item.key)}>
+        <Card className={className} onClick={handleClick}>
             <div className='cardImgWrapper'>
                 <img src={item.coverImage} alt={item.title} />
             </div>

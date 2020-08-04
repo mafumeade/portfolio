@@ -86,12 +86,14 @@
 
             .cardImgWrapper {
                 overflow: hidden;
+                background-color: theme-color('primary');
 
                 img {
                     height: 200px;
                     width: 100%;
 
                     object-fit: fill;
+                    transition: transform 0.2s;
                 }
             }
 
@@ -100,6 +102,8 @@
                 padding: 5px 20px;
 
                 grid-template-columns: 1fr 1fr;
+
+                font-size: 1.2em;
 
                 a {
                     background-color: darken(theme-color('dark'), 1%);
