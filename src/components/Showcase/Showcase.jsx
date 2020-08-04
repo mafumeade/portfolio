@@ -84,7 +84,7 @@ function ItemCard({ item, selected, setSelected }) {
                         <i className='fab fa-github' /> GitHub
                     </a>
                 </div>
-                <div className='links text-center'>
+                <div className='card-link'>
                     <a href={item.url} target='_blank' rel='noopener noreferrer'>
                         Link
                     </a>

@@ -56,22 +56,6 @@
 
         padding: 10px 0;
 
-        .links {
-            display: grid;
-            padding: 5px 20px;
-
-            grid-template-columns: 1fr 1fr;
-
-            a {
-                background-color: darken(theme-color('dark'), 1%);
-                transition: background-color 0.2s;
-
-                &:hover {
-                    background-color: darken(theme-color('dark'), 2%);
-                }
-            }
-        }
-
         .card {
             background-color: darken(theme-color('dark'), 4%);
 
@@ -99,16 +83,33 @@
                     transform: scale(0.95);
                 }
             }
-        }
 
-        .cardImgWrapper {
-            overflow: hidden;
+            .cardImgWrapper {
+                overflow: hidden;
 
-            img {
-                height: 200px;
-                width: 100%;
+                img {
+                    height: 200px;
+                    width: 100%;
 
-                object-fit: fill;
+                    object-fit: fill;
+                }
+            }
+
+            .links {
+                display: grid;
+                padding: 5px 20px;
+
+                grid-template-columns: 1fr 1fr;
+
+                a {
+                    background-color: darken(theme-color('dark'), 1%);
+                    transition: background-color 0.2s;
+                    display: block;
+
+                    &:hover {
+                        background-color: darken(theme-color('dark'), 2%);
+                    }
+                }
             }
         }
 
