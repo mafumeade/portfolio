@@ -146,18 +146,11 @@
             .carousel-item {
                 max-height: 600px;
 
-                &:hover {
-                    .backgroundImg {
-                        transform: scale(0.95);
-                    }
-                }
-
                 .backgroundImg {
                     position: absolute;
                     top: -10%;
                     width: 100%;
-
-                    transition: 2s transform;
+                    transform: scale(1.1);
                 }
 
                 .frontImgContainer {
@@ -166,9 +159,9 @@
                     img {
                         display: block;
                         margin: 0 auto;
-                        transform: scale(0.99);
+                        transform: scale(0.95);
                     }
-                    backdrop-filter: blur(30px);
+                    backdrop-filter: blur(15px);
                 }
             }
         }
