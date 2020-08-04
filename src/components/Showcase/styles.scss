@@ -49,10 +49,12 @@
         }
     }
 
-    .grid {
+    .cardGrid {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 10px;
+
+        padding: 10px 0;
 
         .links {
             display: grid;
@@ -103,8 +105,6 @@
             overflow: hidden;
 
             img {
-                // transition: transform 0.25s;
-                // height: 100%;
                 height: 200px;
                 width: 100%;
 
@@ -126,90 +126,68 @@
     }
 
     .showcaseItem {
-        // transition: max-height 1s, opacity 0.2s;
         overflow: hidden;
-        padding: 5px 0;
 
-        .descriptionGrid {
+        &.shown {
             display: grid;
         }
 
         &.hidden {
-            max-height: 0;
-            opacity: 0;
+            display: none;
         }
 
-        &.shown {
-            opacity: 100%;
-            max-height: 1500px;
-        }
+        .carousel {
+            margin-bottom: 5px;
+            .carousel-item {
+                max-height: 600px;
 
-        .descriptionGrid {
-            .carousel {
-                margin-bottom: 25px;
-                .carousel-item {
-                    max-height: 600px;
-
-                    &:hover {
-                        .backgroundImg {
-                            transform: scale(0.95);
-                        }
-                    }
-
+                &:hover {
                     .backgroundImg {
-                        position: absolute;
-                        top: -10%;
-                        width: 100%;
-
-                        transition: 2s transform;
+                        transform: scale(0.95);
                     }
+                }
 
-                    .frontImgContainer {
-                        width: 100%;
-                        height: 100%;
-                        img {
-                            display: block;
-                            margin: 0 auto;
-                            transform: scale(0.99);
-                        }
-                        backdrop-filter: blur(30px);
+                .backgroundImg {
+                    position: absolute;
+                    top: -10%;
+                    width: 100%;
+
+                    transition: 2s transform;
+                }
+
+                .frontImgContainer {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                        transform: scale(0.99);
                     }
+                    backdrop-filter: blur(30px);
                 }
             }
         }
 
         @media (max-width: 576px) {
-            .descriptionGrid {
-                .carousel {
-                    // margin-bottom: 25px;
-                    .carousel-item {
-                        // height: 300px;
-                        // height: 80vh;
-                        height: auto !important;
-                    }
+            .carousel {
+                .carousel-item {
+                    height: auto !important;
                 }
             }
         }
 
         @media (max-width: 992px) {
-            .descriptionGrid {
-                .carousel {
-                    margin-bottom: 25px;
-                    .carousel-item {
-                        // height: 300px;
-                        height: 80vh;
-                    }
+            .carousel {
+                .carousel-item {
+                    height: 80vh;
                 }
             }
         }
 
         @media (min-width: 992px) {
-            .descriptionGrid {
-                .carousel {
-                    margin-bottom: 25px;
-                    .carousel-item {
-                        height: 500px;
-                    }
+            .carousel {
+                .carousel-item {
+                    height: 500px;
                 }
             }
         }
