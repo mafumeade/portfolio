@@ -1,40 +1,32 @@
-@import "src/BS.scss";
+@import 'src/BS.scss';
 
 .topBar {
-  color: theme-color("primary");
-  background-color: theme-color("dark");
-  z-index: 100;
+    color: theme-color('primary');
+    background-color: theme-color('dark');
+    z-index: 100;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
 
-  .barLink {
-    text-align: center;
-    font-size: 1.25em;
+    .barLink {
+        text-align: center;
+        font-size: 1.25em;
 
-    a {
-      margin: 0 auto;
-      transition: all 0.75s;
-      overflow: hidden;
-      white-space: nowrap;
-      display: block;
+        a {
+            margin: 0 auto;
+            transition: background-color 0.5s;
+            white-space: nowrap;
+            display: block;
+
+            max-width: 100%;
+            text-decoration: none;
+
+            background-color: theme-color('dark');
+            &:hover {
+                background-color: darken(theme-color('dark'), 1%);
+            }
+        }
     }
-
-    &:not(.showText) {
-      a {
-        max-width: 1em;
-      }
-    }
-
-    &.showText {
-      a {
-        max-width: 100%;
-        text-decoration: none;
-        overflow: show;
-        background-color: darken(theme-color("dark"), 1%);
-      }
-    }
-  }
 }
