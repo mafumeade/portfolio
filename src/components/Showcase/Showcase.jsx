@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { portfolioItems } from '../../data/portfolioData';
-import { Card, Button, Container, Carousel } from 'react-bootstrap';
+import { Card, Button, Container, Carousel, Badge } from 'react-bootstrap';
 import useWindowDimensions from '../../hooks/windowDims';
 
 import Markdown from '../Markdown/Markdown';
@@ -80,6 +80,8 @@ function ItemCard({ item, selected, setSelected }) {
         window.scrollTo({ top, behavior: 'smooth' });
     };
 
+    const tags = item.tags.map((tag) => <Badge variant='dark'>{tag}</Badge>);
+
     return (
         <Card className={className} onClick={handleClick}>
             <div className='cardImgWrapper'>
@@ -90,6 +92,7 @@ function ItemCard({ item, selected, setSelected }) {
                 <Card.Title className='text-primary'>
                     <span>{item.title}</span>
                 </Card.Title>
+                <div className='tagContainer'>{tags}</div>
                 <Card.Text className='text-white'>{item.description.split('\n')[0]}</Card.Text>
             </Card.Body>
             <div className='links text-center'>
