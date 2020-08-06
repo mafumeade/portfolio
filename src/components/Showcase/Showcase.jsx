@@ -14,7 +14,14 @@ function ItemBody({ item, selected }) {
 
     item = item || {};
 
-    const images = item.images.map((src) => (
+    // Try to use mobile/desktop images first, falling back to the other if undefined
+    const imageArr =
+        (breakpoint <= 2 ? item.mobileImages : item.desktopImages) ||
+        item.desktopImages ||
+        item.mobileImages ||
+        item.images;
+
+    const images = imageArr.map((src) => (
         <Carousel.Item key={src}>
             <img className={`backgroundImg`} src={src} alt={src} />
             <div className='frontImgContainer'>

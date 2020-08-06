@@ -15,16 +15,28 @@ export const portfolioItems = [
         url: 'https://gksales.herokuapp.com',
         description: salesAppDescription.trim(),
         coverImage: cdnImg('salesApp/cover.png'),
-        images: [
-            //   "salesApp/cover.png",
-            'salesApp/dashboard.png',
-            'salesApp/login.png',
-            'salesApp/leads.png',
-            'salesApp/quotesList.png',
-            'salesApp/floorOptions.png',
-            'salesApp/quote1.png',
-            'salesApp/quote2.png'
-        ].map(cdnImg),
+        mobileImages: [
+            // TODO: Add mobile images to match desktop
+            'dashboard.png',
+            'login.png',
+            'leads.png',
+            'quotesList.png',
+            'floorOptions.png',
+            'quote1.png',
+            'quote2.png',
+            'login16x10.png'
+        ].map((u) => cdnImg(`salesApp/mobile/${u}`)),
+        desktopImages: [
+            'dashboard.png',
+            'login.png',
+            'leads.png',
+            'quotesList.png',
+            'floorOptions.png',
+            'newQuote.png',
+            'pricing.png',
+            'quote1.png',
+            'quote2.png'
+        ].map((u) => cdnImg(`salesApp/desktop/${u}`)),
         tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'Mongo', 'Express']
     },
     {

@@ -30,10 +30,7 @@
             svg {
                 width: 1em;
             }
-        }
-
-        &:hover {
-            a {
+            &:hover {
                 border-bottom: 2px solid theme-color('primary');
             }
         }
