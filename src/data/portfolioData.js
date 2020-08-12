@@ -70,7 +70,7 @@ export const portfolioItems = [
         coverImage:
             'https://images.unsplash.com/photo-1582002834723-2256d33da100?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
         images: ['mooseGameCover.png'].map(cdnImg),
-        tags: ['Java']
+        tags: ['Java', 'Swing']
     }
 ].map((e) => ({ ...e, key: e.title.split(' ').join('_') }));
 
