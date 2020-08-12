@@ -1,84 +1,69 @@
-@import 'src/BS.scss';
+@import "src/BS.scss";
 
 .bio {
-    // General Styles
-    padding: 50px 0 0 0;
+  padding: 50px 0 0 0;
 
-    @media (min-width: 768px) {
-        .imgContainer {
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
+  h1 {
+    grid-area: h;
+
+    padding-left: 10px;
+    font-size: 3em;
+    color: theme-color("primary");
+    background-color: darken(theme-color("dark"), 5%);
+  }
+
+  img {
+    grid-area: i;
+  }
+
+  @media (max-width: 992px) {
+    .bioGrid {
+      display: grid;
+      grid-template-areas:
+        "h"
+        "i"
+        "t";
+    }
+
+    h1 {
+      text-align: center;
     }
 
     img {
-        width: 100%;
-        max-width: 250px;
-        display: block;
+      display: block;
+      margin: 10px auto;
     }
+  }
 
-    .bio_text {
-        background-color: darken(theme-color('dark'), 5%);
-        border-radius: 5px;
-        padding: 10px;
+  @media (min-width: 992px) {
+    .bioGrid {
+      display: grid;
+      grid-template-areas:
+        "i h h "
+        "i t t";
+      grid-template-columns: 1fr 1fr 1fr;
     }
+  }
+
+  .mainText {
+    grid-area: t;
+
+    background-color: darken(theme-color("dark"), 5%);
+    // border-radius: 5px;
+    padding: 10px;
 
     .linkDiv {
-        a {
-            text-decoration: none;
-            svg {
-                width: 1em;
-            }
-            &:hover {
-                border-bottom: 2px solid theme-color('primary');
-            }
+      font-size: 1.5em;
+      margin: 10px 0;
+      a {
+        text-decoration: none;
+        svg {
+          width: 1em;
         }
+        &:hover {
+          border-bottom: 2px solid theme-color("primary");
+        }
+      }
     }
-
-    // Large Styles
-    &.large {
-        img {
-            margin: 2px auto;
-        }
-        .bio_text {
-            margin-left: -1.5em;
-
-            .linkDiv {
-                font-size: 1.5em;
-                margin: 10px 0;
-            }
-        }
-    }
-
-    // Small Styles
-    &.small {
-        h1 {
-            padding: 15px;
-            border-bottom: 5px solid theme-color('primary');
-            margin-bottom: 25px;
-        }
-
-        .bio_text {
-            p {
-                text-align: justify;
-                font-size: 1.25em;
-            }
-
-            .linkDiv {
-                margin: 20px 0;
-                font-size: 1.5em;
-                white-space: nowrap;
-                text-align: center;
-            }
-        }
-
-        img {
-            margin: 0 auto 25px auto;
-        }
-
-        .bio_text {
-            margin-left: none;
-        }
-    }
+  }
 }

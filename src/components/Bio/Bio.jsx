@@ -1,8 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import "./styles.scss";
-import useWindowDimensions from "../../hooks/windowDims";
 import { cdnImg, coverLinks } from "../../data/portfolioData";
 
 const BIO_TEXT = [
@@ -20,33 +19,17 @@ const LINKS = coverLinks.map(({ icon, text, href }) => (
 ));
 
 export default function Bio() {
-  const { breakpoint } = useWindowDimensions();
-  const isSmall = breakpoint <= 1;
-  const sizeClass = isSmall ? "small" : "large";
-
-  const nameClasses = isSmall ? `text-white text-center` : `text-primary`;
-  const NAME = <h1 className={nameClasses}>Matthew Meade</h1>;
-
   return (
-    <Container className={`bio ${sizeClass}`}>
-      <Row>
-        <Col md={4}>
-          {isSmall && NAME}
+    <Container className={`bio`}>
+      <div className="bioGrid">
+        <h1>Matthew Meade</h1>
+        <img alt="" src={cdnImg("general/prof_pic_trans_cropped.png")} />
+        <div className="text-white mainText">
+          {BIO_TEXT}
 
-          <div className="imgContainer">
-            <img alt="" src={cdnImg("general/prof_pic_trans_cropped.png")} />
-          </div>
-        </Col>
-        <Col md={8} sm={12} className="text-white">
-          <div className="bio_text">
-            {!isSmall && NAME}
-
-            {BIO_TEXT}
-
-            {LINKS}
-          </div>
-        </Col>
-      </Row>
+          {LINKS}
+        </div>
+      </div>
     </Container>
   );
 }
