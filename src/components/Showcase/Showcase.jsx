@@ -24,11 +24,22 @@ function ItemBody({ item, selected }) {
     const images = imageArr.map((src) => (
         <Carousel.Item key={src}>
             <img className={`backgroundImg`} src={src} alt={src} />
-            <div className='frontImgContainer'>
+            <div className="frontImgContainer">
                 <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} />
             </div>
         </Carousel.Item>
     ));
+
+    if (item.title === 'Portfolio' && selected) {
+        images.push(
+            <Carousel.Item key="recursiveFrame">
+                <iframe src={`${window.location.href}?q=${Math.random()}`} title={`recursion!_${Math.random()}`} />
+                <div className="frontImgContainer">
+                    <img className={`frontImg d-block ${imgClass}`} src={imageArr[0].src} alt={imageArr[0].src} />
+                </div>
+            </Carousel.Item>
+        );
+    }
     return (
         <div className={`showcaseItem ${selected ? 'shown' : 'hidden'}`}>
             <Carousel>{images}</Carousel>
@@ -43,26 +54,26 @@ function Header({ selectedItem, setSelected }) {
 
     const { url, gitHub, title = 'Portfolio' } = item;
     return (
-        <div className='header'>
-            <div className='btnContainer'>
+        <div className="header">
+            <div className="btnContainer">
                 {selectedItem && (
-                    <Button variant='outline-danger' onClick={() => setSelected(null)}>
+                    <Button variant="outline-danger" onClick={() => setSelected(null)}>
                         Back
                     </Button>
                 )}
             </div>
-            <h1 className='text-primary text-center'>{title}</h1>
-            <div className='linkContainer'>
+            <h1 className="text-primary text-center">{title}</h1>
+            <div className="linkContainer">
                 {gitHub && (
-                    <a href={gitHub} target='_blank' rel='noopener noreferrer'>
+                    <a href={gitHub} target="_blank" rel="noopener noreferrer">
                         {' '}
-                        <i className='fab fa-github' /> GitHub
+                        <i className="fab fa-github" /> GitHub
                     </a>
                 )}
                 {url && (
-                    <a href={url} target='_blank' rel='noopener noreferrer'>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
                         {' '}
-                        <i className='fas fa-globe'></i> Link
+                        <i className="fas fa-globe"></i> Link
                     </a>
                 )}
             </div>
@@ -80,29 +91,33 @@ function ItemCard({ item, selected, setSelected }) {
         window.scrollTo({ top, behavior: 'smooth' });
     };
 
-    const tags = item.tags.map((tag) => <Badge variant='dark'>{tag}</Badge>);
+    const tags = item.tags.map((tag) => (
+        <Badge variant="dark" key={tag}>
+            {tag}
+        </Badge>
+    ));
 
     return (
         <Card className={className} onClick={handleClick}>
-            <div className='cardImgWrapper'>
+            <div className="cardImgWrapper">
                 <img src={item.coverImage} alt={item.title} />
             </div>
 
             <Card.Body>
-                <Card.Title className='text-primary'>
+                <Card.Title className="text-primary">
                     <span>{item.title}</span>
                 </Card.Title>
-                <div className='tagContainer'>{tags}</div>
-                <Card.Text className='text-white'>{item.description.split('\n')[0]}</Card.Text>
+                <div className="tagContainer">{tags}</div>
+                <Card.Text className="text-white">{item.description.split('\n')[0]}</Card.Text>
             </Card.Body>
-            <div className='links text-center'>
-                <div className='card-link'>
-                    <a href={item.gitHub} target='_blank' rel='noopener noreferrer'>
-                        <i className='fab fa-github' /> GitHub
+            <div className="links text-center">
+                <div className="card-link">
+                    <a href={item.gitHub} target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-github" /> GitHub
                     </a>
                 </div>
-                <div className='card-link'>
-                    <a href={item.url} target='_blank' rel='noopener noreferrer'>
+                <div className="card-link">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
                         Link
                     </a>
                 </div>
@@ -116,21 +131,16 @@ export default function Showcase() {
     const selectedItem = portfolioItems.filter((i) => i.key === selected)[0];
 
     const cards = portfolioItems.map((i, n) => (
-        <ItemCard
-            key={i.key + '_card'}
-            item={i}
-            selected={i.key === selected}
-            setSelected={setSelected}
-        />
+        <ItemCard key={i.key + '_card'} item={i} selected={i.key === selected} setSelected={setSelected} />
     ));
     const contents = portfolioItems.map((i, n) => (
         <ItemBody key={i.key + '_contents'} item={i} selected={i.key === selected} />
     ));
     return (
-        <Container className='showcase'>
+        <Container className="showcase">
             <Header selectedItem={selectedItem} setSelected={setSelected} />
             {contents}
-            <div className='cardGrid'>{cards}</div>
+            <div className="cardGrid">{cards}</div>
         </Container>
     );
 }

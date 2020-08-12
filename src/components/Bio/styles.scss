@@ -1,69 +1,87 @@
-@import "src/BS.scss";
+@import 'src/BS.scss';
 
 .bio {
-  padding: 50px 0 0 0;
-
-  h1 {
-    grid-area: h;
-
-    padding-left: 10px;
-    font-size: 3em;
-    color: theme-color("primary");
-    background-color: darken(theme-color("dark"), 5%);
-  }
-
-  img {
-    grid-area: i;
-  }
-
-  @media (max-width: 992px) {
-    .bioGrid {
-      display: grid;
-      grid-template-areas:
-        "h"
-        "i"
-        "t";
-    }
+    padding: 50px 0 0 0;
 
     h1 {
-      text-align: center;
+        grid-area: h;
+
+        padding-left: 10px;
+        font-size: 3em;
+        color: theme-color('primary');
+        background-color: darken(theme-color('dark'), 5%);
     }
 
     img {
-      display: block;
-      margin: 10px auto;
+        grid-area: i;
+        max-width: 75vw;
     }
-  }
 
-  @media (min-width: 992px) {
-    .bioGrid {
-      display: grid;
-      grid-template-areas:
-        "i h h "
-        "i t t";
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  .mainText {
-    grid-area: t;
-
-    background-color: darken(theme-color("dark"), 5%);
-    // border-radius: 5px;
-    padding: 10px;
-
-    .linkDiv {
-      font-size: 1.5em;
-      margin: 10px 0;
-      a {
-        text-decoration: none;
-        svg {
-          width: 1em;
+    @media (max-width: 576px) {
+        .bioGrid {
+            display: grid;
+            grid-template-areas:
+                'h'
+                't';
         }
-        &:hover {
-          border-bottom: 2px solid theme-color("primary");
+
+        h1 {
+            text-align: center;
         }
-      }
+
+        img {
+            display: none;
+        }
     }
-  }
+
+    @media (min-width: 576px) and (max-width: 992px) {
+        .bioGrid {
+            display: grid;
+            grid-template-areas:
+                'h'
+                'i'
+                't';
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 10px auto;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .bioGrid {
+            display: grid;
+            grid-template-areas:
+                'i h h '
+                'i t t';
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .mainText {
+        grid-area: t;
+
+        background-color: darken(theme-color('dark'), 5%);
+        // border-radius: 5px;
+        padding: 10px;
+
+        .linkDiv {
+            font-size: 1.5em;
+            margin: 10px 0;
+            a {
+                text-decoration: none;
+                svg {
+                    width: 1em;
+                }
+                &:hover {
+                    border-bottom: 2px solid theme-color('primary');
+                }
+            }
+        }
+    }
 }
