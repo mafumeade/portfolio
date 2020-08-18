@@ -13,8 +13,9 @@ export const portfolioItems = [
         title: 'Sales App',
         gitHub: 'https://github.com/mafumeade/GKSales',
         url: 'https://gksales.herokuapp.com',
+        urlText: 'Open Demo',
         description: salesAppDescription.trim(),
-        coverImage: cdnImg('salesApp/cover.png'),
+        coverImage: cdnImg('salesApp/desktop/dashboard.png'),
         mobileImages: [
             // TODO: Add mobile images to match desktop
             'dashboard.png',
@@ -36,7 +37,7 @@ export const portfolioItems = [
             'pricing.png',
             'quote1.png',
             'quote2.png'
-        ].map((u) => cdnImg(`salesApp/desktop/${u}`)),
+        ].map((i) => cdnImg(`salesApp/desktop/${i}`)),
         tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'Mongo', 'Express']
     },
     {
@@ -53,13 +54,26 @@ export const portfolioItems = [
     {
         title: 'Android Chat App',
         gitHub: 'https://github.com/mafumeade/AndroidChatApp',
-        url: 'https://MatthewMeade.ca',
+        url: 'https://github.com/mafumeade/AndroidChatApp/releases/tag/1.0',
+        urlText: 'Download',
         description: chatAppDescription.trim(),
         // coverImage: cdnImg('chatApp/chatApp.png'),
-        coverImage:
-            'https://images.unsplash.com/photo-1521931961826-fe48677230a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        images: ['chatAppCover.png'].map(cdnImg),
-        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'Mongo', 'Express']
+        coverImage: cdnImg('chatApp/cover.jpg'),
+        desktopImages: [
+            'chat.jpg',
+            'login.jpg',
+            'contacts.jpg',
+            'search.jpg',
+            'delete.jpg'
+        ].map((i) => cdnImg(`chatApp/desktop/${i}`)),
+        mobileImages: [
+            'chat.jpg',
+            'login.jpg',
+            'contacts.jpg',
+            'search.jpg',
+            'delete.jpg'
+        ].map((i) => cdnImg(`chatApp/mobile/${i}`)),
+        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'Mongo', 'Express', 'Socket.io', 'Expo']
     },
     {
         title: 'Java Moose Game',
