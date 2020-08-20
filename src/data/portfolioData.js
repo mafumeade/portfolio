@@ -6,8 +6,6 @@ import portfolioDescription from './descriptions/portfolio';
 export const CDN_PREFIX = 'https://s3.ca-central-1.amazonaws.com/cdn.matthewmeade.ca/portfolio';
 export const cdnImg = (p) => `${CDN_PREFIX}/${p}`;
 
-// TODO: Image captions
-
 export const portfolioItems = [
     {
         title: 'Sales App',
@@ -17,7 +15,6 @@ export const portfolioItems = [
         description: salesAppDescription.trim(),
         coverImage: cdnImg('salesApp/desktop/dashboard.png'),
         mobileImages: [
-            // TODO: Add mobile images to match desktop
             'dashboard.png',
             'login.png',
             'leads.png',
@@ -58,7 +55,6 @@ export const portfolioItems = [
         url: 'https://github.com/mafumeade/AndroidChatApp/releases/tag/1.0',
         urlText: 'Download',
         description: chatAppDescription.trim(),
-        // coverImage: cdnImg('chatApp/chatApp.png'),
         coverImage: cdnImg('chatApp/cover.jpg'),
         desktopImages: [
             'chat.jpg',

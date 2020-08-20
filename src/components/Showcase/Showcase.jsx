@@ -54,41 +54,6 @@ function ItemBody({ item = {}, selected }) {
         </Carousel.Item>
     ));
 
-    /* Recursion joke, might not be worth confusion
-    if (item.title === 'Portfolio' && selected) {
-        const qs = (window.location.search || '?level=0')
-            .slice(1)
-            .split('&')
-            .map((e) => e.split('='));
-        console.log(Object.fromEntries(qs));
-
-        const level = parseInt(Object.fromEntries(qs).level) || 0;
-
-        if (breakpoint === 0) {
-            images.push(
-                <Carousel.Item key='recursiveFrame' class='text-center text-primary'>
-                    <h1>You've gone too Deep!</h1>
-                </Carousel.Item>
-            );
-        } else {
-            images.push(
-                <Carousel.Item key='recursiveFrame'>
-                    <p>Level: {level}</p>
-                    <iframe
-                        src={`${window.location.origin}?level=${level + 1}`}
-                        title={`recursion_${level}`}
-                    />
-                    <div className='frontImgContainer'>
-                        <img
-                            className={`frontImg d-block ${imgClass}`}
-                            src={imageArr[0].src}
-                            alt={imageArr[0].src}
-                        />
-                    </div>
-                </Carousel.Item>
-            );
-        }
-    }*/
     return (
         <div className={`showcaseItem ${selected ? 'shown' : 'hidden'}`}>
             <Carousel>{images}</Carousel>
