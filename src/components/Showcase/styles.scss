@@ -1,7 +1,7 @@
 @import 'src/BS.scss';
 
 .showcase {
-    padding: 10px;
+    padding-top: 10px;
 
     .header {
         display: grid;
@@ -52,7 +52,8 @@
     .cardGrid {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 10px;
+        column-gap: 10px;
+        row-gap: 10px;
 
         padding: 10px 0;
 
@@ -62,18 +63,11 @@
             box-shadow: 0 0 0 black;
 
             &:hover {
-                img {
-                    transform: scale(0.97);
-                }
-
                 .card-title {
                     text-decoration: underline;
                 }
 
-                box-shadow: 0 5px 10px black;
-                transform: scale(1.01);
-
-                z-index: 2;
+                box-shadow: 0 0 5px theme-color('primary');
             }
 
             .card-body {
@@ -88,7 +82,8 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
-                grid-gap: 5px;
+                column-gap: 5px;
+                row-gap: 5px;
 
                 min-height: 45px;
 
@@ -123,11 +118,10 @@
                 background-color: theme-color('primary');
 
                 height: 150px;
-                img {
+                img,
+                video {
                     width: 100%;
                     object-fit: cover;
-
-                    transition: transform 0.2s;
                 }
             }
 
@@ -141,7 +135,6 @@
 
                 a {
                     background-color: darken(theme-color('dark'), 1%);
-                    transition: background-color 0.2s;
                     display: block;
 
                     &:hover {
@@ -197,18 +190,18 @@
                 .backgroundImg {
                     position: absolute;
                     width: 100%;
-                    transform: scale(1.1);
-                    filter: grayscale(0.75);
+                    filter: grayscale(75%);
                 }
 
                 .frontImgContainer {
                     width: 100%;
                     height: 100%;
-                    img {
+                    img,
+                    video {
                         display: block;
                         margin: 0 auto;
                         transform: scale(0.95);
-                        box-shadow: 0 0 10px;
+                        box-shadow: 0 0 10px black;
                     }
                     backdrop-filter: blur(15px);
                 }

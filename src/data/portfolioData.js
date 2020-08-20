@@ -24,8 +24,7 @@ export const portfolioItems = [
             'quotesList.png',
             'floorOptions.png',
             'quote1.png',
-            'quote2.png',
-            'login16x10.png'
+            'quote2.png'
         ].map((u) => cdnImg(`salesApp/mobile/${u}`)),
         desktopImages: [
             'dashboard.png',
@@ -48,7 +47,9 @@ export const portfolioItems = [
         // coverImage: cdnImg('portfolio/portfolioCover.png'),
         coverImage:
             'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-        images: ['portfolioCover.png'].map(cdnImg),
+        images: [
+            'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+        ],
         tags: ['JavaScript', 'React', 'SCSS']
     },
     {
@@ -81,9 +82,19 @@ export const portfolioItems = [
         url: 'https://github.com/mafumeade/MooseGame',
         description: mooseGameDescription.trim(),
         // coverImage: cdnImg('mooseGame/mooseGameCover.png'),
-        coverImage:
-            'https://images.unsplash.com/photo-1582002834723-2256d33da100?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-        images: ['mooseGameCover.png'].map(cdnImg),
+        coverImage: cdnImg('mooseGame/title.png'),
+        images: [
+            'title.png',
+            'gameplay1.png',
+            'gameplay2.png',
+            'gameOver.png',
+            'controls.png',
+            'storeMain.png',
+            'storeItems.png',
+            'storeCars.png',
+            'settings.png',
+            'gameplayVideo.mp4'
+        ].map((i) => cdnImg(`mooseGame/${i}`)),
         tags: ['Java', 'Swing']
     }
 ].map((e) => ({ ...e, key: e.title.split(' ').join('_') }));

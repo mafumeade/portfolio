@@ -8,11 +8,9 @@ import Markdown from '../Markdown/Markdown';
 
 import './styles.scss';
 
-function ItemBody({ item, selected }) {
+function ItemBody({ item = {}, selected }) {
     const { breakpoint } = useWindowDimensions();
     const imgClass = breakpoint <= 1 ? 'w-100' : 'h-100';
-
-    item = item || {};
 
     // Try to use mobile/desktop images first, falling back to the other if undefined
     const imageArr =
@@ -23,10 +21,36 @@ function ItemBody({ item, selected }) {
 
     const images = imageArr.map((src) => (
         <Carousel.Item key={src}>
-            <img className={`backgroundImg`} src={src} alt={src} />
-            <div className='frontImgContainer'>
-                <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} />
-            </div>
+            {src.endsWith('.mp4') ? (
+                <span>
+                    <video
+                        muted={true}
+                        preload='auto'
+                        src={src}
+                        className='backgroundImg'
+                        autoPlay={true}
+                        loop={true}
+                    />
+
+                    <div className='frontImgContainer'>
+                        <video
+                            muted={true}
+                            preload='auto'
+                            src={src}
+                            className={`frontImg d-block ${imgClass}`}
+                            autoPlay={true}
+                            loop={true}
+                        />
+                    </div>
+                </span>
+            ) : (
+                <span>
+                    <img className='backgroundImg' src={src} alt={src} />
+                    <div className='frontImgContainer'>
+                        <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} />
+                    </div>
+                </span>
+            )}
         </Carousel.Item>
     ));
 
