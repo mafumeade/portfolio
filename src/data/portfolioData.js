@@ -34,7 +34,7 @@ export const portfolioItems = [
             'quote1.png',
             'quote2.png'
         ].map((i) => cdnImg(`salesApp/desktop/${i}`)),
-        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'Mongo', 'Express']
+        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'MongoDB', 'Express']
     },
     {
         title: 'Portfolio',
@@ -70,14 +70,14 @@ export const portfolioItems = [
             'search.jpg',
             'delete.jpg'
         ].map((i) => cdnImg(`chatApp/mobile/${i}`)),
-        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'Mongo', 'Express', 'Socket.io', 'Expo']
+        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'MongoDB', 'Express', 'Socket.io', 'Expo']
     },
     {
         title: 'Java Moose Game',
         gitHub: 'https://github.com/mafumeade/MooseGame',
-        url: 'https://github.com/mafumeade/MooseGame',
+        url: 'https://github.com/mafumeade/MooseGame/releases/tag/1',
+        urlText: 'Download',
         description: mooseGameDescription.trim(),
-        // coverImage: cdnImg('mooseGame/mooseGameCover.png'),
         coverImage: cdnImg('mooseGame/title.png'),
         images: [
             'title.png',
@@ -97,19 +97,35 @@ export const portfolioItems = [
 
 export const coverLinks = [
     {
-        icon: 'fas fa-envelope',
-        text: 'email@MatthewMeade.ca',
-        shortText: 'email',
-        href: 'mailto:email@MatthewMeade.ca'
+        icon: 'fas fa-star',
+        text: 'Portfolio',
+        href: '#portfolio',
+        bioText: 'See My Portfolio',
+        onClick: (e) => {
+            // TODO: Refactor this to be able to scroll from anywhere. Hooks?
+            e.preventDefault();
+            const top = document.querySelector('.showcase .header').offsetTop - 50;
+            window.scrollTo({ top, behavior: 'smooth' });
+        },
+        showInNav: false
     },
     {
         icon: 'fab fa-github',
         text: 'GitHub',
-        href: 'https://github.com/mafumeade'
+        href: 'https://github.com/mafumeade',
+        bioText: 'View My GitHub'
     },
     {
         icon: 'fas fa-file-alt',
         text: 'Resume',
-        href: 'https://MatthewMeade.ca/resume.pdf'
+        href: 'https://MatthewMeade.ca/resume.pdf',
+        bioText: 'Download My Resume'
+    },
+    {
+        icon: 'fas fa-envelope',
+        text: 'email@MatthewMeade.ca',
+        shortText: 'Email Me',
+        href: 'mailto:email@MatthewMeade.ca',
+        bioText: 'Email Me: email@MatthewMeade.ca'
     }
 ];

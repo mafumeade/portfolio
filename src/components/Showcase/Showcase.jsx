@@ -54,11 +54,13 @@ function ItemBody({ item = {}, selected }) {
         </Carousel.Item>
     ));
 
+    const md = `# ${item.title}\n` + item.description;
+
     return (
         <div className={`showcaseItem ${selected ? 'shown' : 'hidden'}`}>
             <Carousel>{images}</Carousel>
 
-            <Markdown text={item.description} />
+            <Markdown text={md} />
         </div>
     );
 }
@@ -68,7 +70,7 @@ function Header({ selectedItem, setSelected }) {
 
     const { url, urlText = 'Link', gitHub, title = 'Portfolio' } = item;
     return (
-        <div className='header'>
+        <div className='header' id='portfolio'>
             <div className='btnContainer'>
                 {selectedItem && (
                     <Button variant='outline-danger' onClick={() => setSelected(null)}>

@@ -56,6 +56,11 @@
             display: block;
             margin: 10px auto;
         }
+
+        .mainText {
+            row-gap: 10px;
+            text-align: center;
+        }
     }
 
     @media (min-width: 992px) {
@@ -65,6 +70,7 @@
                 'i h h '
                 'i t t';
             grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 75px auto;
         }
     }
 
@@ -72,12 +78,14 @@
         grid-area: t;
 
         background-color: darken(theme-color('dark'), 5%);
-        // border-radius: 5px;
-        padding: 10px;
+        padding: 0 10px;
+
+        display: grid;
+        align-items: center;
 
         .linkDiv {
             font-size: 1.5em;
-            margin: 10px 0;
+            // margin: 10px 0;
             a {
                 text-decoration: none;
                 svg {

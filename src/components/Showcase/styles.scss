@@ -59,15 +59,16 @@
 
         .card {
             background-color: darken(theme-color('dark'), 4%);
-            transition: transform 0.2s, width 0.2s, box-shadow 0.2s;
-            box-shadow: 0 0 0 black;
+            transition: transform 0.2s, width 0.2s, box-shadow 0.2s, top 0.2s;
+            box-shadow: 0 0 5px black;
+            top: 0;
 
             &:hover {
                 .card-title {
                     text-decoration: underline;
                 }
-
-                box-shadow: 0 0 5px theme-color('primary');
+                top: -5px;
+                box-shadow: 0 5px 10px black;
             }
 
             .card-body {
@@ -229,6 +230,22 @@
                 .carousel-item {
                     height: 500px;
                 }
+            }
+        }
+
+        .markdown {
+            h1 {
+                color: theme-color('primary');
+                padding-bottom: 5px;
+                border-bottom: 2px solid theme-color('primary');
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            ul {
+                padding-left: 20px;
             }
         }
     }

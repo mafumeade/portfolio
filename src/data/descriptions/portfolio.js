@@ -1,5 +1,5 @@
 // TODO add a real description here
 
 export default `
-This website lol
+Personal website hosting my portfolio and resume
 `;
