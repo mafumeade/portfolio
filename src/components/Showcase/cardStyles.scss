@@ -51,6 +51,7 @@ $ratio: 1.5;
         .title {
             color: theme-color('primary');
             transition: color 0.2s, background-color 0.2s;
+            padding-top: $gap;
         }
 
         .tagContainer {
@@ -78,6 +79,7 @@ $ratio: 1.5;
         p {
             color: white;
             text-align: justify;
+            height: 60px;
         }
 
         position: relative;
@@ -107,7 +109,7 @@ $ratio: 1.5;
             $width: ($gridWidth - (($columns - 1) * $gap)) / $columns;
             width: $width;
 
-            height: $width * $ratio;
+            height: ($width * $ratio) - 40px;
             .imgWrapper {
                 height: $width / $ratio;
             }

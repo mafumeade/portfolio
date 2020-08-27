@@ -122,14 +122,24 @@ function ItemCard({ item, selected, setSelected }) {
                 <img src={item.coverImage} alt={item.title} />
             </div>
             <h2 className='title'>{item.title}</h2>
-            <div className='tagContainer'>{tags}</div>
             <p>{item.description.split('\n')[0]}</p>
+            <div className='tagContainer'>{tags}</div>
 
             <div className='links'>
-                <a href={item.gitHub} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
+                <a
+                    href={item.gitHub}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    onClick={(e) => e.stopPropagation()}
+                >
                     <i className='fab fa-github' /> GitHub
                 </a>
-                <a href={item.url} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
+                <a
+                    href={item.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    onClick={(e) => e.stopPropagation()}
+                >
                     {item.urlText || 'Link'}
                 </a>
             </div>
@@ -142,7 +152,12 @@ export default function Showcase() {
     const selectedItem = portfolioItems.filter((i) => i.key === selected)[0];
 
     const cards = portfolioItems.map((i, n) => (
-        <ItemCard key={i.key + '_card'} item={i} selected={i.key === selected} setSelected={setSelected} />
+        <ItemCard
+            key={i.key + '_card'}
+            item={i}
+            selected={i.key === selected}
+            setSelected={setSelected}
+        />
     ));
     const contents = portfolioItems.map((i, n) => (
         <ItemBody key={i.key + '_contents'} item={i} selected={i.key === selected} />
