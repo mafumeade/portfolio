@@ -34,7 +34,7 @@ export const portfolioItems = [
             'quote1.png',
             'quote2.png'
         ].map((i) => cdnImg(`salesApp/desktop/${i}`)),
-        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'MongoDB', 'Express']
+        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'MongoDB', 'Express', 'Heroku']
     },
     {
         title: 'Portfolio',
@@ -47,7 +47,7 @@ export const portfolioItems = [
         images: [
             'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
         ],
-        tags: ['JavaScript', 'React', 'SCSS']
+        tags: ['JavaScript', 'React', 'SCSS', 'Netlify', 'Markdown', 'JSON', 'PDF']
     },
     {
         title: 'Android Chat App',
@@ -56,21 +56,13 @@ export const portfolioItems = [
         urlText: 'Download',
         description: chatAppDescription.trim(),
         coverImage: cdnImg('chatApp/cover.jpg'),
-        desktopImages: [
-            'chat.jpg',
-            'login.jpg',
-            'contacts.jpg',
-            'search.jpg',
-            'delete.jpg'
-        ].map((i) => cdnImg(`chatApp/desktop/${i}`)),
-        mobileImages: [
-            'chat.jpg',
-            'login.jpg',
-            'contacts.jpg',
-            'search.jpg',
-            'delete.jpg'
-        ].map((i) => cdnImg(`chatApp/mobile/${i}`)),
-        tags: ['JavaScript', 'React', 'Redux', 'SCSS', 'MongoDB', 'Express', 'Socket.io', 'Expo']
+        desktopImages: ['chat.jpg', 'login.jpg', 'contacts.jpg', 'search.jpg', 'delete.jpg'].map((i) =>
+            cdnImg(`chatApp/desktop/${i}`)
+        ),
+        mobileImages: ['chat.jpg', 'login.jpg', 'contacts.jpg', 'search.jpg', 'delete.jpg'].map((i) =>
+            cdnImg(`chatApp/mobile/${i}`)
+        ),
+        tags: ['JavaScript', 'React', 'Redux', 'Android', 'MongoDB', 'Express', 'Socket.io']
     },
     {
         title: 'Java Moose Game',
@@ -91,7 +83,7 @@ export const portfolioItems = [
             'settings.png',
             'gameplayVideo.mp4'
         ].map((i) => cdnImg(`mooseGame/${i}`)),
-        tags: ['Java', 'Swing']
+        tags: ['Java', 'Swing', 'Game', 'OOP', 'Moose']
     }
 ].map((e) => ({ ...e, key: e.title.split(' ').join('_') }));
 

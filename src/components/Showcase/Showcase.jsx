@@ -98,7 +98,7 @@ function Header({ selectedItem, setSelected }) {
 }
 
 function ItemCard({ item, selected, setSelected }) {
-    const className = selected ? 'selected' : '';
+    const selectedClass = selected ? 'selected' : '';
 
     const handleClick = () => {
         setSelected(item.key);
@@ -108,47 +108,32 @@ function ItemCard({ item, selected, setSelected }) {
     };
 
     const tags = item.tags.map((tag) => (
-        <Badge variant='dark' key={tag}>
+        <div className='tag' key={tag}>
             {tag}
-        </Badge>
+        </div>
     ));
 
+    const ratio = 1.5;
+    const height = 250;
+    item.coverImage = `https://via.placeholder.com/${Math.round(height * ratio)}x${height}.png`;
     return (
-        <Card className={className} onClick={handleClick}>
-            <div className='cardImgWrapper'>
+        <div className={`sCard ${selectedClass}`} onClick={handleClick}>
+            <div className='imgWrapper'>
                 <img src={item.coverImage} alt={item.title} />
             </div>
+            <h2 className='title'>{item.title}</h2>
+            <div className='tagContainer'>{tags}</div>
+            <p>{item.description.split('\n')[0]}</p>
 
-            <Card.Body>
-                <Card.Title className='text-primary'>
-                    <span>{item.title}</span>
-                </Card.Title>
-                <div className='tagContainer'>{tags}</div>
-                <Card.Text className='text-white'>{item.description.split('\n')[0]}</Card.Text>
-            </Card.Body>
-            <div className='links text-center'>
-                <div className='card-link'>
-                    <a
-                        href={item.gitHub}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <i className='fab fa-github' /> GitHub
-                    </a>
-                </div>
-                <div className='card-link'>
-                    <a
-                        href={item.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {item.urlText || 'Link'}
-                    </a>
-                </div>
+            <div className='links'>
+                <a href={item.gitHub} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
+                    <i className='fab fa-github' /> GitHub
+                </a>
+                <a href={item.url} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
+                    {item.urlText || 'Link'}
+                </a>
             </div>
-        </Card>
+        </div>
     );
 }
 
@@ -157,12 +142,7 @@ export default function Showcase() {
     const selectedItem = portfolioItems.filter((i) => i.key === selected)[0];
 
     const cards = portfolioItems.map((i, n) => (
-        <ItemCard
-            key={i.key + '_card'}
-            item={i}
-            selected={i.key === selected}
-            setSelected={setSelected}
-        />
+        <ItemCard key={i.key + '_card'} item={i} selected={i.key === selected} setSelected={setSelected} />
     ));
     const contents = portfolioItems.map((i, n) => (
         <ItemBody key={i.key + '_contents'} item={i} selected={i.key === selected} />

@@ -1,0 +1,132 @@
+// 0, 576, 768, 992, 1200
+
+@import 'src/BS.scss';
+
+$gap: 10px;
+
+$ratio: 1.5;
+.cardGrid {
+    display: grid;
+    row-gap: $gap;
+    column-gap: $gap;
+    justify-items: center;
+
+    .sCard {
+        background-color: darken($color: theme-color('dark'), $amount: 4%);
+
+        &.selected {
+            opacity: 0.75;
+        }
+
+        &.selected,
+        &:hover {
+            .imgWrapper {
+                $padding: $gap / 2;
+                padding: $padding ($padding * $ratio);
+            }
+
+            .title {
+                // border-bottom: 2px solid theme-color('primary');
+                color: theme-color('dark');
+                background-color: theme-color('primary');
+                // text-decoration: underline;
+            }
+        }
+
+        & > *:not(.imgWrapper) {
+            padding-left: $gap;
+            padding-right: $gap;
+        }
+
+        .imgWrapper {
+            background-color: theme-color('primary');
+            padding: 0;
+            transition: padding 0.2s;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .title {
+            color: theme-color('primary');
+            transition: color 0.2s, background-color 0.2s;
+        }
+
+        .tagContainer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr 1fr;
+            padding: 10px $gap;
+
+            width: 100%;
+
+            row-gap: $gap;
+            column-gap: $gap;
+
+            .tag {
+                color: white;
+                font-size: 75%;
+                font-weight: bold;
+                background-color: theme-color('dark');
+                border-radius: 0.25rem;
+                text-align: center;
+                padding: 0.25em 0.4em;
+            }
+        }
+
+        p {
+            color: white;
+            text-align: justify;
+        }
+
+        position: relative;
+        .links {
+            width: 100%;
+            font-size: 1.5em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: $gap;
+
+            position: absolute;
+            bottom: $gap;
+
+            a {
+                background-color: theme-color('dark');
+                text-align: center;
+            }
+        }
+    }
+}
+
+@mixin cardGrid($gridWidth, $columns) {
+    .cardGrid {
+        grid-template-columns: repeat($columns, 1fr);
+
+        .sCard {
+            $width: ($gridWidth - (($columns - 1) * $gap)) / $columns;
+            width: $width;
+
+            height: $width * $ratio;
+            .imgWrapper {
+                height: $width / $ratio;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    @include cardGrid(1080px, 3);
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    @include cardGrid(900px, 3);
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    @include cardGrid(660px, 2);
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    @include cardGrid(480px, 1);
+}
