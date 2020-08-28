@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { portfolioItems } from '../../data/portfolioData';
-import { Card, Button, Container, Carousel, Badge } from 'react-bootstrap';
+import { Button, Container, Carousel } from 'react-bootstrap';
 import useWindowDimensions from '../../hooks/windowDims';
 
 import Markdown from '../Markdown/Markdown';
