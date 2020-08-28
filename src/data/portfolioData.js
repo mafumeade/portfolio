@@ -13,7 +13,7 @@ export const portfolioItems = [
         url: 'https://gksales.herokuapp.com',
         urlText: 'Open Demo',
         description: salesAppDescription.trim(),
-        coverImage: cdnImg('salesApp/desktop/dashboard.png'),
+        coverImage: cdnImg('salesApp/coverImage.png'),
         mobileImages: [
             'dashboard.png',
             'login.png',
@@ -55,13 +55,21 @@ export const portfolioItems = [
         url: 'https://github.com/mafumeade/AndroidChatApp/releases/tag/1.0',
         urlText: 'Download',
         description: chatAppDescription.trim(),
-        coverImage: cdnImg('chatApp/cover.jpg'),
-        desktopImages: ['chat.jpg', 'login.jpg', 'contacts.jpg', 'search.jpg', 'delete.jpg'].map((i) =>
-            cdnImg(`chatApp/desktop/${i}`)
-        ),
-        mobileImages: ['chat.jpg', 'login.jpg', 'contacts.jpg', 'search.jpg', 'delete.jpg'].map((i) =>
-            cdnImg(`chatApp/mobile/${i}`)
-        ),
+        coverImage: cdnImg('chatApp/coverImage.png'),
+        desktopImages: [
+            'chat.jpg',
+            'login.jpg',
+            'contacts.jpg',
+            'search.jpg',
+            'delete.jpg'
+        ].map((i) => cdnImg(`chatApp/desktop/${i}`)),
+        mobileImages: [
+            'chat.jpg',
+            'login.jpg',
+            'contacts.jpg',
+            'search.jpg',
+            'delete.jpg'
+        ].map((i) => cdnImg(`chatApp/mobile/${i}`)),
         tags: ['JavaScript', 'React', 'Redux', 'Android', 'MongoDB', 'Express', 'Socket.io']
     },
     {
@@ -70,7 +78,7 @@ export const portfolioItems = [
         url: 'https://github.com/mafumeade/MooseGame/releases/tag/1',
         urlText: 'Download',
         description: mooseGameDescription.trim(),
-        coverImage: cdnImg('mooseGame/title.png'),
+        coverImage: cdnImg('mooseGame/coverImage.png'),
         images: [
             'title.png',
             'gameplay1.png',

@@ -112,6 +112,8 @@ $ratio: 1.5;
             height: ($width * $ratio) - 40px;
             .imgWrapper {
                 height: $width / $ratio;
+                width: $width;
+                overflow: hidden;
             }
         }
     }

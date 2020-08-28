@@ -113,9 +113,9 @@ function ItemCard({ item, selected, setSelected }) {
         </div>
     ));
 
-    const ratio = 1.5;
-    const height = 250;
-    item.coverImage = `https://via.placeholder.com/${Math.round(height * ratio)}x${height}.png`;
+    // const ratio = 1.5;
+    // const height = 600;
+    // item.coverImage = `https://via.placeholder.com/${Math.round(height * ratio)}x${height}.png`;
     return (
         <div className={`sCard ${selectedClass}`} onClick={handleClick}>
             <div className='imgWrapper'>
