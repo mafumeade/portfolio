@@ -57,18 +57,18 @@ export const portfolioItems = [
         description: chatAppDescription.trim(),
         coverImage: cdnImg('chatApp/coverImage.png'),
         desktopImages: [
-            'chat.jpg',
-            'login.jpg',
-            'contacts.jpg',
-            'search.jpg',
-            'delete.jpg'
+            'chat.png',
+            'login.png',
+            'contacts.png',
+            'search.png',
+            'delete.png'
         ].map((i) => cdnImg(`chatApp/desktop/${i}`)),
         mobileImages: [
-            'chat.jpg',
-            'login.jpg',
-            'contacts.jpg',
-            'search.jpg',
-            'delete.jpg'
+            'chat.png',
+            'login.png',
+            'contacts.png',
+            'search.png',
+            'delete.png'
         ].map((i) => cdnImg(`chatApp/mobile/${i}`)),
         tags: ['JavaScript', 'React', 'Redux', 'Android', 'MongoDB', 'Express', 'Socket.io']
     },

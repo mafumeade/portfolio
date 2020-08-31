@@ -25,7 +25,7 @@ function ItemBody({ item = {}, selected }) {
                 <span>
                     <video
                         muted={true}
-                        preload='auto'
+                        preload='metadata'
                         src={src}
                         className='backgroundImg'
                         autoPlay={true}
@@ -35,7 +35,7 @@ function ItemBody({ item = {}, selected }) {
                     <div className='frontImgContainer'>
                         <video
                             muted={true}
-                            preload='auto'
+                            preload='metadata'
                             src={src}
                             className={`frontImg d-block ${imgClass}`}
                             autoPlay={true}
@@ -44,13 +44,13 @@ function ItemBody({ item = {}, selected }) {
                     </div>
                 </span>
             ) : (
-                <span>
-                    <img className='backgroundImg' src={src} alt={src} />
-                    <div className='frontImgContainer'>
-                        <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} />
-                    </div>
-                </span>
-            )}
+                    <span>
+                        <img className='backgroundImg' src={src} alt={src} loading="lazy" />
+                        <div className='frontImgContainer'>
+                            <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} loading="lazy" />
+                        </div>
+                    </span>
+                )}
         </Carousel.Item>
     ));
 
