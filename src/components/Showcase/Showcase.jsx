@@ -44,13 +44,18 @@ function ItemBody({ item = {}, selected }) {
                     </div>
                 </span>
             ) : (
-                    <span>
-                        <img className='backgroundImg' src={src} alt={src} loading="lazy" />
-                        <div className='frontImgContainer'>
-                            <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} loading="lazy" />
-                        </div>
-                    </span>
-                )}
+                <span>
+                    <img className='backgroundImg' src={src} alt={src} loading='lazy' />
+                    <div className='frontImgContainer'>
+                        <img
+                            className={`frontImg d-block ${imgClass}`}
+                            src={src}
+                            alt={src}
+                            loading='lazy'
+                        />
+                    </div>
+                </span>
+            )}
         </Carousel.Item>
     ));
 
