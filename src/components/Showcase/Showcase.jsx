@@ -61,9 +61,12 @@ function ItemBody({ item = {}, selected }) {
 
     const md = `# ${item.title}\n` + item.description;
 
+    const showCarousel = images.length > 0;
+    const showControls = images.length > 1;
+
     return (
         <div className={`showcaseItem ${selected ? 'shown' : 'hidden'}`}>
-            <Carousel>{images}</Carousel>
+            {showCarousel && <Carousel controls={showControls}>{images}</Carousel>}
 
             <Markdown text={md} />
         </div>

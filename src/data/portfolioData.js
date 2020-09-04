@@ -42,11 +42,8 @@ export const portfolioItems = [
         url: 'https://MatthewMeade.ca',
         description: portfolioDescription.trim(),
         // coverImage: cdnImg('portfolio/portfolioCover.png'),
-        coverImage:
-            'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-        images: [
-            'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-        ],
+        coverImage: cdnImg('portfolio/coverImage.png'),
+        images: [cdnImg('portfolio/coverImage.png')],
         tags: ['JavaScript', 'React', 'SCSS', 'Netlify', 'Markdown', 'JSON', 'PDF']
     },
     {
