@@ -59,7 +59,8 @@ function ItemBody({ item = {}, selected }) {
         </Carousel.Item>
     ));
 
-    const md = `# ${item.title}\n` + item.description;
+    const tags = item.tags.map((e) => `_${e}_`).join(' - ');
+    const md = `# ${item.title}\n\n${tags}\n\n${item.description}`;
 
     const showCarousel = images.length > 0;
     const showControls = images.length > 1;
