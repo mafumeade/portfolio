@@ -14,8 +14,7 @@
     "scripts": {
         "start": "react-scripts start --no-cache",
         "build": "react-scripts build && node ./resume/buildResume.js --outputDir=./build",
-        "eject": "react-scripts eject",
-        "postbuild": "react-snap"
+        "eject": "react-scripts eject"
     },
     "eslintConfig": {
         "extends": "react-app"

@@ -28,14 +28,6 @@ export default function useWindowDimensions() {
       setWindowDimensions(getWindowDimensions());
     }
 
-    // This is a bit hackish, but
-    // The build time rendering causes the site to render with a mobile breakpoint
-    // And the actual size isn't recalculated until the window is resized
-    if (!window.didFirstHandle) {
-      window.didFirstHandle = true;
-      handleResize();
-    }
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
 
