@@ -10,14 +10,8 @@ import './styles.scss';
 
 function ItemBody({ item = {}, selected }) {
     const { breakpoint } = useWindowDimensions();
-    const imgClass = breakpoint <= 1 ? 'w-100' : 'h-100';
-
-    // Try to use mobile/desktop images first, falling back to the other if undefined
-    const imageArr =
-        (breakpoint <= 2 ? item.mobileImages : item.desktopImages) ||
-        item.desktopImages ||
-        item.mobileImages ||
-        item.images;
+    const imgClass = breakpoint <= 2 ? 'w-100' : 'h-100';
+    const imageArr = (breakpoint <= 2 ? item.mobileImages : item.desktopImages) || item.images;
 
     const images = imageArr.map((src) => (
         <Carousel.Item key={src}>
@@ -44,18 +38,18 @@ function ItemBody({ item = {}, selected }) {
                     </div>
                 </span>
             ) : (
-                <span>
-                    <img className='backgroundImg' src={src} alt={src} loading='lazy' />
-                    <div className='frontImgContainer'>
-                        <img
-                            className={`frontImg d-block ${imgClass}`}
-                            src={src}
-                            alt={src}
-                            loading='lazy'
-                        />
-                    </div>
-                </span>
-            )}
+                    <span>
+                        <img className='backgroundImg' src={src} alt={src} loading='lazy' />
+                        <div className='frontImgContainer'>
+                            <img
+                                className={`frontImg d-block ${imgClass}`}
+                                src={src}
+                                alt={src}
+                                loading='lazy'
+                            />
+                        </div>
+                    </span>
+                )}
         </Carousel.Item>
     ));
 
@@ -122,9 +116,6 @@ function ItemCard({ item, selected, setSelected }) {
         </div>
     ));
 
-    // const ratio = 1.5;
-    // const height = 600;
-    // item.coverImage = `https://via.placeholder.com/${Math.round(height * ratio)}x${height}.png`;
     return (
         <div className={`sCard ${selectedClass}`} onClick={handleClick}>
             <div className='imgWrapper'>
