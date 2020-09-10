@@ -28,8 +28,12 @@ export default function useWindowDimensions() {
       setWindowDimensions(getWindowDimensions());
     }
 
+    window.addEventListener("DOMContentLoaded", handleResize);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("DOMContentLoaded", handleResize);
+    };
   }, []);
 
   return windowDimensions;
