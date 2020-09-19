@@ -2,11 +2,11 @@
 
 <div id="headerLinks">
 
-[MatthewMeade.ca](https://matthewmeade.ca)
+[MatthewMeade.ca](https://MatthewMeade.ca)
 
 [github.com/MatthewMeade](https://github.com/MatthewMeade/)
 
-[email@matthewmeade.ca](mailto:email@MatthewMeade.ca)
+[email@MatthewMeade.ca](mailto:email@MatthewMeade.ca)
 
 [709-219-4096](tel:709-219-4096)
 
