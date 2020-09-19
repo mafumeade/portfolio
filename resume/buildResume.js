@@ -86,7 +86,14 @@ async function generate(content, outputName, outputDir, ext) {
             stylesheet: `${__dirname}/styles.css`,
             as_html: ext === 'html',
             pdf_options: {
+                format: 'Letter',
                 margin: '15mm 15mm'
+            },
+            launch_options: {
+                defaultViewport: {
+                    width: 1920,
+                    height: 1080
+                }
             }
         }
     );
