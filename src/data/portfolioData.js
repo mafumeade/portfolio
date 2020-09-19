@@ -9,7 +9,7 @@ export const cdnImg = (p) => `${CDN_PREFIX}/${p}`;
 export const portfolioItems = [
     {
         title: 'Sales App',
-        gitHub: 'https://github.com/mafumeade/GKSales',
+        gitHub: 'https://github.com/MatthewMeade/GKSales',
         url: 'https://gksales.herokuapp.com',
         urlText: 'Open Demo',
         description: salesAppDescription.trim(),
@@ -38,7 +38,7 @@ export const portfolioItems = [
     },
     {
         title: 'Portfolio',
-        gitHub: 'https://github.com/mafumeade/portfolio',
+        gitHub: 'https://github.com/MatthewMeade/portfolio',
         url: 'https://MatthewMeade.ca',
         description: portfolioDescription.trim(),
         // coverImage: cdnImg('portfolio/portfolioCover.png'),
@@ -48,8 +48,8 @@ export const portfolioItems = [
     },
     {
         title: 'Android Chat App',
-        gitHub: 'https://github.com/mafumeade/AndroidChatApp',
-        url: 'https://github.com/mafumeade/AndroidChatApp/releases/tag/1.0',
+        gitHub: 'https://github.com/MatthewMeade/AndroidChatApp',
+        url: 'https://github.com/MatthewMeade/AndroidChatApp/releases/tag/1.0',
         urlText: 'Download',
         description: chatAppDescription.trim(),
         coverImage: cdnImg('chatApp/coverImage.png'),
@@ -71,8 +71,8 @@ export const portfolioItems = [
     },
     {
         title: 'Java Moose Game',
-        gitHub: 'https://github.com/mafumeade/MooseGame',
-        url: 'https://github.com/mafumeade/MooseGame/releases/tag/1',
+        gitHub: 'https://github.com/MatthewMeade/MooseGame',
+        url: 'https://github.com/MatthewMeade/MooseGame/releases/tag/1',
         urlText: 'Download',
         description: mooseGameDescription.trim(),
         coverImage: cdnImg('mooseGame/coverImage.png'),
@@ -109,7 +109,7 @@ export const coverLinks = [
     {
         icon: 'fab fa-github',
         text: 'GitHub',
-        href: 'https://github.com/mafumeade',
+        href: 'https://github.com/MatthewMeade',
         bioText: 'View My GitHub'
     },
     {
