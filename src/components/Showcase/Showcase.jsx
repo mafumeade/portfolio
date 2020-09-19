@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { portfolioItems } from '../../data/portfolioData';
 import { Button, Container, Carousel } from 'react-bootstrap';
@@ -8,7 +8,7 @@ import Markdown from '../Markdown/Markdown';
 
 import './styles.scss';
 
-function ItemBody({ item = {}, selected }) {
+function ItemBody({ item = {} }) {
     const { breakpoint } = useWindowDimensions();
     const imgClass = breakpoint <= 2 ? 'w-100' : 'h-100';
     const imageArr = (breakpoint <= 2 ? item.mobileImages : item.desktopImages) || item.images;
@@ -38,18 +38,13 @@ function ItemBody({ item = {}, selected }) {
                     </div>
                 </span>
             ) : (
-                    <span>
-                        <img className='backgroundImg' src={src} alt={src} loading='lazy' />
-                        <div className='frontImgContainer'>
-                            <img
-                                className={`frontImg d-block ${imgClass}`}
-                                src={src}
-                                alt={src}
-                                loading='lazy'
-                            />
-                        </div>
-                    </span>
-                )}
+                <span>
+                    <img className='backgroundImg' src={src} alt={src} loading='lazy' />
+                    <div className='frontImgContainer'>
+                        <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} loading='lazy' />
+                    </div>
+                </span>
+            )}
         </Carousel.Item>
     ));
 
@@ -60,7 +55,7 @@ function ItemBody({ item = {}, selected }) {
     const showControls = images.length > 1;
 
     return (
-        <div className={`showcaseItem ${selected ? 'shown' : 'hidden'}`}>
+        <div className={`showcaseItem`}>
             {showCarousel && <Carousel controls={showControls}>{images}</Carousel>}
 
             <Markdown text={md} />
@@ -126,20 +121,10 @@ function ItemCard({ item, selected, setSelected }) {
             <div className='tagContainer'>{tags}</div>
 
             <div className='links'>
-                <a
-                    href={item.gitHub}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    onClick={(e) => e.stopPropagation()}
-                >
+                <a href={item.gitHub} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
                     <i className='fab fa-github' /> GitHub
                 </a>
-                <a
-                    href={item.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    onClick={(e) => e.stopPropagation()}
-                >
+                <a href={item.url} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
                     {item.urlText || 'Link'}
                 </a>
             </div>
@@ -151,21 +136,32 @@ export default function Showcase() {
     const [selected, setSelected] = useState(null);
     const selectedItem = portfolioItems.filter((i) => i.key === selected)[0];
 
-    const cards = portfolioItems.map((i, n) => (
-        <ItemCard
-            key={i.key + '_card'}
-            item={i}
-            selected={i.key === selected}
-            setSelected={setSelected}
-        />
+    const cards = portfolioItems.map((i) => (
+        <ItemCard key={i.key + '_card'} item={i} selected={i.key === selected} setSelected={setSelected} />
     ));
-    const contents = portfolioItems.map((i, n) => (
-        <ItemBody key={i.key + '_contents'} item={i} selected={i.key === selected} />
-    ));
+
+    // Pre load images to prevent pop in on carousels
+    useEffect(() => {
+        portfolioItems.forEach((i) => {
+            if (i.desktopImages) {
+                const img = new Image();
+                img.src = i.desktopImages[0];
+            }
+            if (i.images) {
+                const img = new Image();
+                img.src = i.images[0];
+            }
+            if (i.mobileImages) {
+                const img = new Image();
+                img.src = i.mobileImages[0];
+            }
+        });
+    });
+
     return (
         <Container className='showcase'>
             <Header selectedItem={selectedItem} setSelected={setSelected} />
-            {contents}
+            {selected && <ItemBody item={selectedItem} />}
             <div className='cardGrid'>{cards}</div>
         </Container>
     );
