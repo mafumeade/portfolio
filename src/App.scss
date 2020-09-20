@@ -1,10 +1,11 @@
-@import "src/BS.scss";
+@import 'src/vars.scss';
+@import './BS.scss';
 
 html,
 #root {
-  background-color: darken(theme-color("dark"), 2%);
+    background-color: $dark;
 }
 
 .mainContainer {
-  background-color: theme-color("dark");
+    // background-color: $darker;
 }

@@ -1,8 +1,8 @@
-@import 'src/BS.scss';
+@import 'src/vars.scss';
 
 .topBar {
-    color: theme-color('primary');
-    background-color: theme-color('dark');
+    color: $primary;
+    background-color: $dark;
     z-index: 100;
 
     position: fixed;
@@ -23,9 +23,8 @@
             max-width: 100%;
             text-decoration: none;
 
-            background-color: theme-color('dark');
             &:hover {
-                background-color: darken(theme-color('dark'), 1%);
+                background-color: $darker;
             }
         }
     }

@@ -1,6 +1,4 @@
-// 0, 576, 768, 992, 1200
-
-@import "src/BS.scss";
+@import 'src/vars.scss';
 
 $gap: 10px;
 
@@ -12,7 +10,7 @@ $ratio: 1.5;
     justify-items: center;
 
     .sCard {
-        background-color: darken($color: theme-color("dark"), $amount: 4%);
+        background-color: $darker;
 
         &.selected {
             opacity: 0.75;
@@ -26,8 +24,8 @@ $ratio: 1.5;
             }
 
             .title {
-                color: theme-color("dark");
-                background-color: theme-color("primary");
+                color: $dark;
+                background-color: $primary;
             }
         }
 
@@ -37,7 +35,7 @@ $ratio: 1.5;
         }
 
         .imgWrapper {
-            background-color: theme-color("primary");
+            background-color: $primary;
             padding: 0;
             transition: padding 0.2s;
 
@@ -47,7 +45,7 @@ $ratio: 1.5;
         }
 
         .title {
-            color: theme-color("primary");
+            color: $primary;
             transition: color 0.2s, background-color 0.2s;
             padding-top: $gap;
         }
@@ -67,7 +65,7 @@ $ratio: 1.5;
                 color: white;
                 font-size: 75%;
                 font-weight: bold;
-                background-color: theme-color("dark");
+                background-color: $dark;
                 border-radius: 0.25rem;
                 text-align: center;
                 padding: 0.25em 0.4em;
@@ -89,7 +87,7 @@ $ratio: 1.5;
 
             padding: $gap;
             a {
-                background-color: theme-color("dark");
+                background-color: $dark;
                 text-align: center;
                 display: block;
             }

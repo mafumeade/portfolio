@@ -1,4 +1,4 @@
-@import 'src/BS.scss';
+@import 'src/vars.scss';
 
 .bio {
     padding-top: 50px;
@@ -13,8 +13,8 @@
 
         padding-left: 10px;
         font-size: 3em;
-        color: theme-color('primary');
-        background-color: darken(theme-color('dark'), 5%);
+        color: $primary;
+        background-color: $darker;
     }
 
     img {
@@ -77,7 +77,7 @@
     .mainText {
         grid-area: t;
 
-        background-color: darken(theme-color('dark'), 5%);
+        background-color: $darker;
         padding: 0 10px;
 
         display: grid;
@@ -85,14 +85,13 @@
 
         .linkDiv {
             font-size: 1.5em;
-            // margin: 10px 0;
             a {
                 text-decoration: none;
                 svg {
                     width: 1em;
                 }
                 &:hover {
-                    border-bottom: 2px solid theme-color('primary');
+                    border-bottom: 2px solid $primary;
                 }
             }
         }
