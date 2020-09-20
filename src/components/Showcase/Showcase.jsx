@@ -1,62 +1,47 @@
 import React, { useEffect, useState } from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 import { portfolioItems } from '../../data/portfolioData';
-import { Button, Container, Carousel } from 'react-bootstrap';
+
 import useWindowDimensions from '../../hooks/windowDims';
-
 import Markdown from '../Markdown/Markdown';
-
 import './styles.scss';
 
 function ItemBody({ item = {} }) {
     const { breakpoint } = useWindowDimensions();
-    const imgClass = breakpoint <= 2 ? 'w-100' : 'h-100';
+    const imgClass = breakpoint <= 2 ? 'mobile' : 'desktop';
     const imageArr = (breakpoint <= 2 ? item.mobileImages : item.desktopImages) || item.images;
 
     const images = imageArr.map((src) => (
-        <Carousel.Item key={src}>
+        <div className={`carouselPage ${imgClass}`}>
             {src.endsWith('.mp4') ? (
-                <span>
-                    <video
-                        muted={true}
-                        preload='metadata'
-                        src={src}
-                        className='backgroundImg'
-                        autoPlay={true}
-                        loop={true}
-                    />
-
-                    <div className='frontImgContainer'>
-                        <video
-                            muted={true}
-                            preload='metadata'
-                            src={src}
-                            className={`frontImg d-block ${imgClass}`}
-                            autoPlay={true}
-                            loop={true}
-                        />
-                    </div>
-                </span>
+                <video className={imgClass} muted={true} preload='metadata' src={src} autoPlay={true} loop={true} />
             ) : (
-                <span>
-                    <img className='backgroundImg' src={src} alt={src} loading='lazy' />
-                    <div className='frontImgContainer'>
-                        <img className={`frontImg d-block ${imgClass}`} src={src} alt={src} loading='lazy' />
-                    </div>
-                </span>
+                <img className={imgClass} src={src} alt={src} loading='lazy' />
             )}
-        </Carousel.Item>
+        </div>
     ));
 
     const tags = item.tags.map((e) => `_${e}_`).join(' - ');
     const md = `# ${item.title}\n\n${tags}\n\n${item.description}`;
 
     const showCarousel = images.length > 0;
-    const showControls = images.length > 1;
 
     return (
         <div className={`showcaseItem`}>
-            {showCarousel && <Carousel controls={showControls}>{images}</Carousel>}
+            {showCarousel && (
+                <Carousel
+                    renderThumbs={(e) => null}
+                    className={`scCarousel ${imgClass}`}
+                    infiniteLoop
+                    emulateTouch
+                    swipeScrollTolerance={0}
+                    useKeyboardArrows
+                >
+                    {images}
+                </Carousel>
+            )}
 
             <Markdown text={md} />
         </div>
@@ -65,6 +50,7 @@ function ItemBody({ item = {} }) {
 
 function Header({ selectedItem, setSelected }) {
     const item = selectedItem || {};
+    const { breakpoint } = useWindowDimensions();
 
     const { url, urlText = 'Link', gitHub, title = 'Portfolio' } = item;
     return (
@@ -72,7 +58,7 @@ function Header({ selectedItem, setSelected }) {
             <div className='btnContainer'>
                 {selectedItem && (
                     <div className='backBtn' onClick={() => setSelected(null)}>
-                        <i className='far fa-window-close' /> Close
+                        <i className='far fa-window-close' /> {breakpoint > 0 && 'Close'}
                     </div>
                 )}
             </div>
@@ -81,13 +67,13 @@ function Header({ selectedItem, setSelected }) {
                 {gitHub && (
                     <a href={gitHub} target='_blank' rel='noopener noreferrer'>
                         {' '}
-                        <i className='fab fa-github' /> GitHub
+                        <i className='fab fa-github' /> {breakpoint > 0 && 'GitHub'}
                     </a>
                 )}
                 {url && (
                     <a href={url} target='_blank' rel='noopener noreferrer'>
                         {' '}
-                        <i className='fas fa-globe'></i> {urlText}
+                        <i className='fas fa-globe'></i> {breakpoint > 0 && urlText}
                     </a>
                 )}
             </div>
