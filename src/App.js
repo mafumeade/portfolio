@@ -2,7 +2,6 @@ import React from 'react';
 import './App.scss';
 
 import '@fortawesome/fontawesome-free/js/all';
-import { Container } from 'react-bootstrap';
 import TopBar from './components/navbar/TopBar';
 import Bio from './components/Bio/Bio';
 import useWindowDimensions from './hooks/windowDims';
@@ -17,7 +16,7 @@ function App() {
 
     return (
         <div>
-            <div bg='dark' variant='dark' className='mainContainer container'>
+            <div bg='dark' variant='dark' className='mainContainer _container'>
                 <TopBar breakpoint={breakpoint} />
 
                 <Bio />

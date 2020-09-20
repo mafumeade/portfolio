@@ -71,12 +71,12 @@ function Header({ selectedItem, setSelected }) {
         <div className='header' id='portfolio'>
             <div className='btnContainer'>
                 {selectedItem && (
-                    <Button variant='outline-danger' onClick={() => setSelected(null)}>
-                        Back
-                    </Button>
+                    <div className='backBtn' onClick={() => setSelected(null)}>
+                        <i className='far fa-window-close' /> Close
+                    </div>
                 )}
             </div>
-            <h1 className='text-primary text-center'>{title}</h1>
+            <h1>{title}</h1>
             <div className='linkContainer'>
                 {gitHub && (
                     <a href={gitHub} target='_blank' rel='noopener noreferrer'>
@@ -159,7 +159,7 @@ export default function Showcase() {
     });
 
     return (
-        <div className='showcase container'>
+        <div className='showcase _container'>
             <Header selectedItem={selectedItem} setSelected={setSelected} />
             {selected && <ItemBody item={selectedItem} />}
             <div className='cardGrid'>{cards}</div>

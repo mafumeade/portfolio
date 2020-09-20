@@ -83,12 +83,16 @@
         display: grid;
         align-items: center;
 
+        color: $white;
+
         .linkDiv {
             font-size: 1.5em;
             a {
                 text-decoration: none;
+                color: $white;
                 svg {
                     width: 1em;
+                    color: $primary;
                 }
                 &:hover {
                     border-bottom: 2px solid $primary;

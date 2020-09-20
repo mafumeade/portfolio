@@ -37,7 +37,7 @@ $ratio: 1.5;
         .imgWrapper {
             background-color: $primary;
             padding: 0;
-            transition: padding 0.2s;
+            transition: padding 0.25s;
 
             img {
                 width: 100%;
@@ -46,7 +46,7 @@ $ratio: 1.5;
 
         .title {
             color: $primary;
-            transition: color 0.2s, background-color 0.2s;
+            transition: color 0.25s, background-color 0.25s;
             padding-top: $gap;
         }
 
@@ -62,10 +62,10 @@ $ratio: 1.5;
             column-gap: $gap;
 
             .tag {
-                color: white;
+                color: $white;
                 font-size: 75%;
-                font-weight: bold;
-                background-color: $dark;
+                // font-weight: bold;
+                font-style: italic;
                 border-radius: 0.25rem;
                 text-align: center;
                 padding: 0.25em 0.4em;
@@ -73,7 +73,7 @@ $ratio: 1.5;
         }
 
         p {
-            color: white;
+            color: $white;
             text-align: justify;
             height: 50px;
         }
@@ -87,7 +87,8 @@ $ratio: 1.5;
 
             padding: $gap;
             a {
-                background-color: $dark;
+                // background-color: $dark;
+                color: $primary;
                 text-align: center;
                 display: block;
             }

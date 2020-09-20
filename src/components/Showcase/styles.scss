@@ -37,6 +37,22 @@
 
         .btnContainer {
             grid-area: btn;
+
+            .backBtn {
+                color: $red;
+                font-size: 20px;
+                text-align: center;
+                width: 50%;
+                border-radius: 5px;
+                padding-bottom: 2px;
+
+                transition: 0.25s background-color, 0.25s color;
+
+                &:hover {
+                    background-color: $red;
+                    color: $white;
+                }
+            }
         }
 
         .linkContainer {
@@ -47,6 +63,8 @@
 
         h1 {
             grid-area: title;
+            color: $primary;
+            text-align: center;
         }
     }
 

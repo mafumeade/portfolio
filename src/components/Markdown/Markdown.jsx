@@ -1,9 +1,9 @@
-import React from "react";
-import marked from "marked";
+import React from 'react';
+import marked from 'marked';
 
-import "./styles.scss";
+import './styles.scss';
 
 export default function Markdown({ text }) {
-  const obj = { __html: marked(text) };
-  return <div dangerouslySetInnerHTML={obj} className="markdown text-light"></div>;
+    const obj = { __html: marked(text) };
+    return <div dangerouslySetInnerHTML={obj} className='markdown'></div>;
 }
