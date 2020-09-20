@@ -24,14 +24,13 @@ export default function Bio() {
                 rel='noopener noreferrer'
                 onClick={(e) => onClick && onClick(e)}
             >
-                <i className={`${icon} text-primary`} />{' '}
-                {(width <= 500 && shortText) || bioText || text}
+                <i className={`${icon} text-primary`} /> {(width <= 500 && shortText) || bioText || text}
             </a>
         </div>
     ));
 
     return (
-        <Container className={`bio`}>
+        <div className='bio container'>
             <div className='bioGrid'>
                 <h1>Matthew Meade</h1>
                 <img alt='' src={cdnImg('general/prof_pic_trans_cropped.png')} />
@@ -41,6 +40,6 @@ export default function Bio() {
                     {LINKS}
                 </div>
             </div>
-        </Container>
+        </div>
     );
 }

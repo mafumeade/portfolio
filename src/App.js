@@ -17,13 +17,13 @@ function App() {
 
     return (
         <div>
-            <Container bg='dark' variant='dark' className='mainContainer'>
+            <div bg='dark' variant='dark' className='mainContainer container'>
                 <TopBar breakpoint={breakpoint} />
 
                 <Bio />
 
                 <Showcase />
-            </Container>
+            </div>
         </div>
     );
 }

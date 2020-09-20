@@ -10,10 +10,12 @@
     left: 0;
     width: 100vw;
 
+    display: grid;
+    grid-auto-flow: column;
+
     .barLink {
         text-align: center;
-        font-size: 1.25em;
-
+        font-size: 1.2em;
         a {
             margin: 0 auto;
             transition: background-color 0.5s;

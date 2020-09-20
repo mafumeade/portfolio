@@ -159,10 +159,10 @@ export default function Showcase() {
     });
 
     return (
-        <Container className='showcase'>
+        <div className='showcase container'>
             <Header selectedItem={selectedItem} setSelected={setSelected} />
             {selected && <ItemBody item={selectedItem} />}
             <div className='cardGrid'>{cards}</div>
-        </Container>
+        </div>
     );
 }
