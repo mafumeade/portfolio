@@ -101,8 +101,7 @@
                     max-height: $maxHeight;
                     img,
                     video {
-                        max-height: $maxHeight;
-                        width: auto;
+                        width: 100%;
                     }
                 }
 
