@@ -1,4 +1,9 @@
-$primary: #b2dca2;
+:root {
+    --hue: 103;
+}
+
+// $mainColor: #b2dca2;
+$mainColor: hsl(var(--hue), 45%, 75%);
 $dark: #343a40;
 $red: #dc3545;
 $white: #eee;

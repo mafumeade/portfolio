@@ -13,13 +13,19 @@
 
         padding-left: 10px;
         font-size: 3em;
-        color: $primary;
+        color: $mainColor;
         background-color: $darker;
     }
 
-    img {
-        grid-area: i;
+    .bioImgContainer {
         max-width: 75vw;
+        grid-area: i;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+            stroke: $mainColor;
+        }
     }
 
     @media (max-width: 576px) {
@@ -34,7 +40,7 @@
             text-align: center;
         }
 
-        img {
+        .bioImgContainer {
             display: none;
         }
     }
@@ -52,7 +58,7 @@
             text-align: center;
         }
 
-        img {
+        .bioImgContainer {
             display: block;
             margin: 10px auto;
         }
@@ -92,10 +98,10 @@
                 color: $white;
                 svg {
                     width: 1em;
-                    color: $primary;
+                    color: $mainColor;
                 }
                 &:hover {
-                    border-bottom: 2px solid $primary;
+                    border-bottom: 2px solid $mainColor;
                 }
             }
         }

@@ -56,7 +56,7 @@
         }
 
         .linkContainer {
-            color: $primary;
+            color: $mainColor;
             grid-area: links;
             font-size: 1.25em;
             text-align: center;
@@ -64,7 +64,7 @@
 
         h1 {
             grid-area: title;
-            color: $primary;
+            color: $mainColor;
             text-align: center;
         }
     }
@@ -119,9 +119,9 @@
 
         .markdown {
             h1 {
-                color: $primary;
+                color: $mainColor;
                 padding-bottom: 5px;
-                border-bottom: 2px solid $primary;
+                border-bottom: 2px solid $mainColor;
             }
 
             h2 {

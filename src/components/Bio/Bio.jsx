@@ -4,6 +4,8 @@ import './styles.scss';
 import { cdnImg, coverLinks } from '../../data/portfolioData';
 import useWindowDimensions from '../../hooks/windowDims';
 
+import Logo from "./Logo";
+
 export default function Bio() {
     const { width } = useWindowDimensions();
 
@@ -19,7 +21,10 @@ export default function Bio() {
         <div className='bio _container'>
             <div className='bioGrid'>
                 <h1>Matthew Meade</h1>
-                <img alt='' src={cdnImg('general/prof_pic_trans_cropped.png')} />
+                    {/* <img alt='' src={cdnImg('general/prof_pic_trans_cropped.png')} /> */}
+                    <div className="bioImgContainer">
+                        <Logo />
+                    </div>
                 <div className='mainText'>{LINKS}</div>
             </div>
         </div>

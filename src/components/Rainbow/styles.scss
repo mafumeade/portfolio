@@ -1,0 +1,11 @@
+.rainbowButton {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    font-size: 1.25em;
+    cursor: pointer;
+
+    &.inactive {
+        filter: grayscale(100%);
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 
 import '@fortawesome/fontawesome-free/js/all';
@@ -8,20 +8,21 @@ import useWindowDimensions from './hooks/windowDims';
 
 import './App.scss';
 import Showcase from './components/Showcase/Showcase';
+import Rainbow from './components/Rainbow/Rainbow';
 
-// import Markdown from "./components/Markdown/Markdown";
 
 function App() {
     const { breakpoint } = useWindowDimensions();
-
     return (
         <div>
-            <div bg='dark' variant='dark' className='mainContainer _container'>
+            <div bg="dark" variant="dark" className="mainContainer _container">
                 <TopBar breakpoint={breakpoint} />
 
                 <Bio />
 
                 <Showcase />
+
+                <Rainbow />
             </div>
         </div>
     );

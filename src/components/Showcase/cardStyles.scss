@@ -25,7 +25,7 @@ $ratio: 1.5;
 
             .title {
                 color: $dark;
-                background-color: $primary;
+                background-color: $mainColor;
             }
         }
 
@@ -35,7 +35,7 @@ $ratio: 1.5;
         }
 
         .imgWrapper {
-            background-color: $primary;
+            background-color: $mainColor;
             padding: 0;
             transition: padding 0.25s;
 
@@ -45,7 +45,7 @@ $ratio: 1.5;
         }
 
         .title {
-            color: $primary;
+            color: $mainColor;
             transition: color 0.25s, background-color 0.25s;
             padding-top: $gap;
         }
@@ -88,7 +88,7 @@ $ratio: 1.5;
             padding: $gap;
             a {
                 // background-color: $dark;
-                color: $primary;
+                color: $mainColor;
                 text-align: center;
                 display: block;
             }
