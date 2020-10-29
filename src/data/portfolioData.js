@@ -11,7 +11,7 @@ export const portfolioItems = [
         title: 'Sales App',
         gitHub: 'https://github.com/MatthewMeade/GKSales',
         url: 'https://gksales.herokuapp.com',
-        urlText: 'Open Demo',
+        urlText: 'Demo',
         description: salesAppDescription.trim(),
         coverImage: cdnImg('salesApp/coverImage.png'),
         mobileImages: [
@@ -50,7 +50,7 @@ export const portfolioItems = [
         title: 'Android Chat App',
         gitHub: 'https://github.com/MatthewMeade/AndroidChatApp',
         url: 'https://github.com/MatthewMeade/AndroidChatApp/releases/tag/1.0',
-        urlText: 'Download',
+        urlText: 'App',
         description: chatAppDescription.trim(),
         coverImage: cdnImg('chatApp/coverImage.png'),
         desktopImages: [
@@ -73,7 +73,7 @@ export const portfolioItems = [
         title: 'Java Moose Game',
         gitHub: 'https://github.com/MatthewMeade/MooseGame',
         url: 'https://github.com/MatthewMeade/MooseGame/releases/tag/1',
-        urlText: 'Download',
+        urlText: 'Game',
         description: mooseGameDescription.trim(),
         coverImage: cdnImg('mooseGame/coverImage.png'),
         images: [

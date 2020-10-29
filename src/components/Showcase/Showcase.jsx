@@ -16,9 +16,9 @@ function ItemBody({ item = {} }) {
     const images = imageArr.map((src) => (
         <div className={`carouselPage ${imgClass}`}>
             {src.endsWith('.mp4') ? (
-                <video className={imgClass} muted={true} preload='metadata' src={src} autoPlay={true} loop={true} />
+                <video className={imgClass} muted={true} preload="metadata" src={src} autoPlay={true} loop={true} />
             ) : (
-                <img className={imgClass} src={src} alt={src} loading='lazy' />
+                <img className={imgClass} src={src} alt={src} loading="lazy" />
             )}
         </div>
     ));
@@ -54,26 +54,26 @@ function Header({ selectedItem, setSelected }) {
 
     const { url, urlText = 'Link', gitHub, title = 'Portfolio' } = item;
     return (
-        <div className='header' id='portfolio'>
-            <div className='btnContainer'>
+        <div className="header" id="portfolio">
+            <div className="btnContainer">
                 {selectedItem && (
-                    <div className='backBtn' onClick={() => setSelected(null)}>
-                        <i className='far fa-window-close' /> {breakpoint > 0 && 'Close'}
+                    <div className="backBtn" onClick={() => setSelected(null)}>
+                        <i className="far fa-window-close" /> {breakpoint > 0 && 'Close'}
                     </div>
                 )}
             </div>
             <h1>{title}</h1>
-            <div className='linkContainer'>
+            <div className="linkContainer">
                 {gitHub && (
-                    <a href={gitHub} target='_blank' rel='noopener noreferrer'>
+                    <a href={gitHub} target="_blank" rel="noopener noreferrer">
                         {' '}
-                        <i className='fab fa-github' /> {breakpoint > 0 && 'GitHub'}
+                        <i className="fab fa-github" /> {breakpoint > 0 && 'GitHub'}
                     </a>
                 )}
                 {url && (
-                    <a href={url} target='_blank' rel='noopener noreferrer'>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
                         {' '}
-                        <i className='fas fa-globe'></i> {breakpoint > 0 && urlText}
+                        <i className="fas fa-globe"></i> {breakpoint > 0 && urlText}
                     </a>
                 )}
             </div>
@@ -92,26 +92,32 @@ function ItemCard({ item, selected, setSelected }) {
     };
 
     const tags = item.tags.map((tag) => (
-        <div className='tag' key={tag}>
+        <div className="tag" key={tag}>
             {tag}
         </div>
     ));
 
     return (
         <div className={`sCard ${selectedClass}`} onClick={handleClick}>
-            <div className='imgWrapper'>
+            <div className="imgWrapper">
                 <img src={item.coverImage} alt={item.title} />
             </div>
-            <h2 className='title'>{item.title}</h2>
+            <h2 className="title">{item.title}</h2>
             <p>{item.description.split('\n')[0]}</p>
-            <div className='tagContainer'>{tags}</div>
+            <div className="tagContainer">{tags}</div>
 
-            <div className='links'>
-                <a href={item.gitHub} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
-                    <i className='fab fa-github' /> GitHub
+            <div className="links">
+                <a href={item.gitHub} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <span className="icon">
+                        <i className="fab fa-github" />
+                    </span>
+                    <span className="text">GitHub</span>
                 </a>
-                <a href={item.url} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
-                    {item.urlText || 'Link'}
+                <a href={item.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <span className="icon">
+                        <i className="fas fa-globe" />
+                    </span>
+                    <span className="text">{item.urlText || 'Link'}</span>
                 </a>
             </div>
         </div>
@@ -145,10 +151,10 @@ export default function Showcase() {
     });
 
     return (
-        <div className='showcase _container'>
+        <div className="showcase _container">
             <Header selectedItem={selectedItem} setSelected={setSelected} />
             {selected && <ItemBody item={selectedItem} />}
-            <div className='cardGrid'>{cards}</div>
+            <div className="cardGrid">{cards}</div>
         </div>
     );
 }

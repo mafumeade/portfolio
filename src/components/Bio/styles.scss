@@ -1,7 +1,6 @@
 @import 'src/vars.scss';
 
 .bio {
-    padding-top: 50px;
 
     .bioGrid {
         column-gap: 10px;
@@ -43,9 +42,14 @@
         .bioImgContainer {
             display: none;
         }
+
+        .mainText {
+            row-gap: 20px;
+            text-align: center;
+        }
     }
 
-    @media (min-width: 576px) and (max-width: 992px) {
+    @media (min-width: 576px) and (max-width: 768px) {
         .bioGrid {
             display: grid;
             grid-template-areas:
@@ -59,17 +63,16 @@
         }
 
         .bioImgContainer {
-            display: block;
-            margin: 10px auto;
+            display: none;
         }
 
         .mainText {
-            row-gap: 10px;
+            row-gap: 20px;
             text-align: center;
         }
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
         .bioGrid {
             display: grid;
             grid-template-areas:

@@ -8,7 +8,7 @@ export default function Rainbow({ speed = 5, varName = 'hue' }) {
         let interval = null;
         if (active) {
             interval = setInterval(() => {
-                document.documentElement.style.setProperty(`--${varName}`, Date.now() / speed);
+                document.documentElement.style.setProperty(`--${varName}`, (Date.now() / speed) % 360);
             }, speed);
         } else {
             document.documentElement.style.removeProperty(`--${varName}`);
