@@ -11,30 +11,27 @@ a {
 html,
 #root {
     background-color: $dark;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+        'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
     padding: 20px 10px;
 }
 
-html {
-    overflow-y: overlay;
-}
 ::-webkit-scrollbar {
-    width: 6px;
-}
- 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-}
- 
-::-webkit-scrollbar-thumb {
-    background: $mainColor; 
+    width: 10px;
+
+    &-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &-thumb {
+        background: $mainColor;
+    }
 }
 
 .text-white {
     color: $white;
 }
-
 
 ._container {
     margin-right: auto;
