@@ -11,6 +11,8 @@ $ratio: 1.5;
 
     .sCard {
         background-color: $darker;
+        transition: box-shadow 0.25s, background-color 0.25s;
+
 
         &.selected {
             opacity: 0.75;
@@ -18,14 +20,12 @@ $ratio: 1.5;
 
         &.selected,
         &:hover {
-            .imgWrapper {
-                $padding: $gap / 2;
-                padding: $padding ($padding * $ratio);
-            }
 
-            .title {
-                color: $dark;
-                background-color: $mainColor;
+            background-color: darken($darker, 1%);
+            box-shadow: 0 0 10px -6px $mainColor;
+
+            .imgWrapper {
+                filter: grayscale(0);
             }
         }
 
@@ -37,7 +37,9 @@ $ratio: 1.5;
         .imgWrapper {
             background-color: $mainColor;
             padding: 0;
-            transition: padding 0.25s;
+            // transition: filter 0.25s;
+
+            filter: grayscale(0.1);
 
             img {
                 width: 100%;
@@ -46,7 +48,6 @@ $ratio: 1.5;
 
         .title {
             color: $mainColor;
-            transition: color 0.25s, background-color 0.25s;
             padding-top: $gap;
         }
 
