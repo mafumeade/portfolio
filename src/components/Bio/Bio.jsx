@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './styles.scss';
-import { cdnImg, coverLinks } from '../../data/portfolioData';
+import { coverLinks } from '../../data/portfolioData';
 import useWindowDimensions from '../../hooks/windowDims';
 
 import Logo from "./Logo";
