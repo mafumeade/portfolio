@@ -2,11 +2,24 @@ import salesAppDescription from './descriptions/salesApp';
 import mooseGameDescription from './descriptions/mooseGame';
 import chatAppDescription from './descriptions/chatApp';
 import portfolioDescription from './descriptions/portfolio';
+import ticTacToeDescription from './descriptions/ticTacToe';
 
 export const CDN_PREFIX = 'https://cdn.matthewmeade.ca/portfolio';
 export const cdnImg = (p) => `${CDN_PREFIX}/${p}`;
 
 export const portfolioItems = [
+    {
+        title: 'Tic Tac Toe',
+        gitHub: 'https://github.com/MatthewMeade/TicTacToe',
+        url: 'https://tictactoe.MatthewMeade.ca',
+        urlText: 'Play',
+        description: ticTacToeDescription.trim(),
+        coverImage: cdnImg('ttc/coverImage.png'),
+        images: ['darkTheme.png', 'lightTheme.png', 'largeGame.png'].map((i) =>
+            cdnImg(`ttc/desktop/${i}`)
+        ),
+        tags: ['JavaScript', 'p5.js', 'Canvas']
+    },
     {
         title: 'Sales App',
         gitHub: 'https://github.com/MatthewMeade/GKSales',
