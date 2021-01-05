@@ -29,7 +29,7 @@
  
 ## Experience
 
-### Jr. Software Developer at Radient360: May 2019 - Present
+### Intermediate Software Developer at Radient360: May 2019 - Present
 
 -   Dev Ops: _May - December 2019_
     -   Quickly adapted to Dev Ops role having no prior experience
@@ -42,6 +42,7 @@
     -   Collaborating as a team using an Agile development methodology to produce web applications
     -   Daily tasks include writing business logic and layout in Radient360's internal configuration language, as well as contributing the the underlying application framework written in Javascript using React/NodeJS
     -   Built an internal web app which showcases and provides documentation for components available in Radient360's framework
+    -   Built a tool which allows developers to build and test data pipelines
 
 ### Software Developer Intern at ClearRisk: September - December 2018
 
