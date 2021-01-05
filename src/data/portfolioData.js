@@ -3,7 +3,7 @@ import mooseGameDescription from './descriptions/mooseGame';
 import chatAppDescription from './descriptions/chatApp';
 import portfolioDescription from './descriptions/portfolio';
 
-export const CDN_PREFIX = 'https://s3.ca-central-1.amazonaws.com/cdn.matthewmeade.ca/portfolio';
+export const CDN_PREFIX = 'https://cdn.matthewmeade.ca/portfolio';
 export const cdnImg = (p) => `${CDN_PREFIX}/${p}`;
 
 export const portfolioItems = [
