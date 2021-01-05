@@ -13,14 +13,12 @@ $ratio: 1.5;
         background-color: $darker;
         transition: box-shadow 0.25s, background-color 0.25s;
 
-
         &.selected {
             opacity: 0.75;
         }
 
         &.selected,
         &:hover {
-
             background-color: darken($darker, 1%);
             box-shadow: 0 0 10px -6px $mainColor;
 
@@ -99,14 +97,18 @@ $ratio: 1.5;
                 &:hover {
                     --opacity: 0.2;
                 }
-                
+
                 .icon {
-                    background-color: rgba(0,0,0, var(--opacity));
+                    background-color: rgba(0, 0, 0, var(--opacity));
                     text-align: center;
                 }
 
                 .text {
-                    background: linear-gradient(90deg, rgba(0,0,0, var(--opacity)) 0%, rgba(0,0,0,0) 100% );
+                    background: linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, var(--opacity)) 0%,
+                        rgba(0, 0, 0, 0) 100%
+                    );
                     padding-left: 5px;
                 }
             }
@@ -143,6 +145,10 @@ $ratio: 1.5;
 
         a {
             margin: $gap 0 0 0;
+        }
+
+        .sCard {
+            margin-top: 25px;
         }
     }
 }
