@@ -13,9 +13,10 @@ function ItemBody({ item = {} }) {
     const imgClass = breakpoint <= 2 ? 'mobile' : 'desktop';
     const imageArr = (breakpoint <= 2 ? item.mobileImages : item.desktopImages) || item.images;
 
+
     const images = imageArr.map((src) => (
         <div className={`carouselPage ${imgClass}`} key={src}>
-            {src.endsWith('.mp4') ? (
+            {src.endsWith('.mp4') || src.endsWith('.webm') ? (
                 <video
                     className={imgClass}
                     muted={true}

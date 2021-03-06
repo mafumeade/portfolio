@@ -3,11 +3,35 @@ import mooseGameDescription from './descriptions/mooseGame';
 import chatAppDescription from './descriptions/chatApp';
 import portfolioDescription from './descriptions/portfolio';
 import ticTacToeDescription from './descriptions/ticTacToe';
+import subToolSubscription from './descriptions/subsTool'; 
+import _2048Clone from './descriptions/2048Clone'; 
 
 export const CDN_PREFIX = 'https://cdn.matthewmeade.ca/portfolio';
 export const cdnImg = (p) => `${CDN_PREFIX}/${p}`;
 
 export const portfolioItems = [
+    {
+        title: '2048 Clone',
+        description: _2048Clone.trim(),
+        url: 'https://2048.matthewmeade.ca',
+        github: 'https://github.com/MatthewMeade/2048Clone',
+        tags: ['JavaScript', 'p5.js', 'canvas'],
+        coverImage: cdnImg('2048Clone/coverImage.png'),
+        images: ['Video.webm'].map((i) =>
+            cdnImg(`2048Clone/${i}`)
+        ),
+    },
+    {
+        title: 'Playlist Tool',
+        description: subToolSubscription.trim(),
+        url: 'https://subscriptions.matthewmeade.ca',
+        gitHub: 'https://github.com/MatthewMeade/YouTubeSubsPlaylist',
+        tags: ['JavaScript','YouTube API','OAuth'],
+        coverImage: cdnImg('subTool/coverImage.png'),
+        images: ['coverImage.png'].map((i) =>
+            cdnImg(`subTool/${i}`)
+        ),
+    },
     {
         title: 'Tic Tac Toe',
         gitHub: 'https://github.com/MatthewMeade/TicTacToe',
