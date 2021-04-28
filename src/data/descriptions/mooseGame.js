@@ -1,4 +1,4 @@
-export default `
+const str = `
 An arcade style game written in Java using Swing
 
 Swerve around traffic and the occasional moose to survive as long as you can!
@@ -13,3 +13,5 @@ Swerve around traffic and the occasional moose to survive as long as you can!
 
 Developed as a final project for my Java class
 `;
+
+export default str;

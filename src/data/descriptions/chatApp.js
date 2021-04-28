@@ -1,4 +1,4 @@
-export default `
+const str = `
 React Native Chat application using Socket.io
 
 ## App features include:
@@ -12,3 +12,5 @@ React Native Chat application using Socket.io
 
 Developed as my Final Project in an Android course
 `;
+
+export default str;

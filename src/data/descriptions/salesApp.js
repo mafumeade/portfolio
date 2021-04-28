@@ -1,4 +1,4 @@
-export default `
+const str = `
 Prototype sales application build built on the MERN stack
 
 The app allows a sales person to track and manage every step in their door-to-door sales process
@@ -20,3 +20,5 @@ The app allows a sales person to track and manage every step in their door-to-do
 
 Built for a Garage Floor sales company as part of my software development program's Comprehensive Project
   `;
+
+export default str;
