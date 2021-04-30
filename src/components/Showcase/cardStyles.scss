@@ -1,154 +1,187 @@
-@import 'src/vars.scss';
+@import "src/vars.scss";
 
 $gap: 10px;
 
 $ratio: 1.5;
 .cardGrid {
-    display: grid;
-    row-gap: $gap;
-    column-gap: $gap;
-    justify-items: center;
+  display: grid;
+  row-gap: 2em;
+  column-gap: 1em;
+  justify-items: center;
+  cursor: pointer;
 
-    .sCard {
-        background-color: $darker;
-        transition: box-shadow 0.25s, background-color 0.25s;
+  .sCard {
+    background-color: $darker;
+    transition: box-shadow 0.25s, background-color 0.25s;
 
-        &.selected {
-            opacity: 0.75;
-        }
+    padding-bottom: 50px;
 
-        &.selected,
-        &:hover {
-            background-color: darken($darker, 1%);
-            box-shadow: 0 0 10px -6px $mainColor;
-
-            .imgWrapper {
-                filter: grayscale(0);
-            }
-        }
-
-        & > *:not(.imgWrapper) {
-            padding-left: $gap;
-            padding-right: $gap;
-        }
-
-        .imgWrapper {
-            background-color: $mainColor;
-            padding: 0;
-            // transition: filter 0.25s;
-
-            filter: grayscale(0.1);
-
-            img {
-                width: 100%;
-            }
-        }
-
-        .title {
-            color: $mainColor;
-            padding-top: $gap;
-        }
-
-        .tagContainer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr 1fr;
-            padding: 10px $gap;
-
-            width: 100%;
-
-            row-gap: $gap;
-            column-gap: $gap;
-
-            .tag {
-                color: $white;
-                font-size: 75%;
-                // font-weight: bold;
-                font-style: italic;
-                border-radius: 0.25rem;
-                text-align: center;
-                padding: 0.25em 0.4em;
-            }
-        }
-
-        p {
-            color: $white;
-            text-align: justify;
-            height: 50px;
-        }
-
-        .links {
-            width: 100%;
-            font-size: 1.5em;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: $gap;
-
-            padding: $gap;
-            a {
-                color: $mainColor;
-                text-decoration: none;
-
-                display: grid;
-                grid-auto-flow: column;
-                grid-template-columns: 40px auto;
-
-                --opacity: 0.1;
-                &:hover {
-                    --opacity: 0.2;
-                }
-
-                .icon {
-                    background-color: rgba(0, 0, 0, var(--opacity));
-                    text-align: center;
-                }
-
-                .text {
-                    background: linear-gradient(
-                        90deg,
-                        rgba(0, 0, 0, var(--opacity)) 0%,
-                        rgba(0, 0, 0, 0) 100%
-                    );
-                    padding-left: 5px;
-                }
-            }
-        }
+    position: relative;
+    * {
+      position: relative;
+      text-align: center;
     }
+
+    .title {
+      margin-top: -50px;
+      background-color: rgba($darker, $alpha: 0.8);
+
+      padding: 5px 0;
+      text-align: center;
+      transition: background-color 0.25s;
+    }
+
+    &.selected {
+      opacity: 0.75;
+    }
+
+    &.selected,
+    &:hover {
+      background-color: darken($darker, 1%);
+      box-shadow: 0 0 10px -6px $mainColor;
+
+      .imgWrapper {
+        filter: grayscale(0);
+      }
+
+      .title {
+        background-color: darken($darker, 1%);
+        text-decoration: underline;
+      }
+    }
+
+    & > *:not(.imgWrapper) {
+      padding-left: $gap;
+      padding-right: $gap;
+    }
+
+    .imgWrapper {
+      background-color: $mainColor;
+      padding: 0;
+      // transition: filter 0.25s;
+
+      filter: grayscale(0.1);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      color: $mainColor;
+      padding-top: $gap;
+    }
+
+    .tagContainer {
+      // display: grid;
+      // grid-template-columns: repeat(4, 1fr);
+      // grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 10px $gap;
+
+      width: 100%;
+
+      row-gap: $gap;
+      column-gap: $gap;
+
+      .tag {
+        color: $white;
+        font-size: 75%;
+        font-style: italic;
+        text-align: center;
+        // padding: 0.25em 0.4em;
+        width: 20%;
+      }
+    }
+
+    p {
+      color: $white;
+      // text-align: justify;
+      height: 50px;
+    }
+
+    .links {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 1.5em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $gap;
+
+      padding: $gap;
+
+      a {
+        color: $mainColor;
+        text-decoration: none;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, var(--opacity)) 0%,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(0, 0, 0, var(--opacity)) 100%
+        );
+
+        --opacity: 0.1;
+        &:hover {
+          --opacity: 0.2;
+        }
+
+        .icon {
+          position: absolute;
+          left: 5px;
+        }
+
+        .text {
+          // padding-left: 5px;
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 @mixin cardGrid($columns) {
-    .cardGrid {
-        grid-template-columns: repeat($columns, 1fr);
-    }
+  .cardGrid {
+    grid-template-columns: repeat($columns, 1fr);
+  }
 }
 
 @media (min-width: 1200px) {
-    @include cardGrid(3);
+  @include cardGrid(3);
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
-    @include cardGrid(3);
+  @include cardGrid(3);
 }
 
 @media (min-width: 650px) and (max-width: 992px) {
-    @include cardGrid(2);
+  @include cardGrid(2);
 }
 
 @media (max-width: 650px) {
-    @include cardGrid(1);
+  @include cardGrid(1);
 
-    // Stack github and project links on small screens
-    .cardGrid {
-        .links {
-            display: block !important;
-        }
-
-        a {
-            margin: $gap 0 0 0;
-        }
-
-        .sCard {
-            margin-top: 25px;
-        }
+  // Stack github and project links on small screens
+  .cardGrid {
+    gap: 3em;
+    .links {
+      // display: block !important;
+      grid-template-columns: auto !important;
+      row-gap: 10px;
     }
+
+    a {
+      margin: $gap 0 0 0;
+    }
+
+    .sCard {
+      padding-bottom: 110px !important;
+      margin-top: 25px;
+    }
+  }
 }
