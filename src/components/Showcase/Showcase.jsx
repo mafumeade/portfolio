@@ -25,7 +25,7 @@ function ItemBody({ item = {} }) {
   ));
 
   const tags = item.tags.map((e) => `_${e}_`).join(" - ");
-  const md = `# ${item.title}\n\n${tags}\n\n${item.description}`;
+  const md = `#\n\n${tags}\n\n${item.description}`;
 
   const showCarousel = images.length > 0;
 

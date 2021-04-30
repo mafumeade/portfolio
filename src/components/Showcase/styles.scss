@@ -132,6 +132,10 @@
     }
 
     .markdown {
+      & > p:first-of-type {
+        text-align: center;
+      }
+
       h1 {
         color: $mainColor;
         padding-bottom: 5px;

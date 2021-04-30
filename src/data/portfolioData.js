@@ -101,7 +101,7 @@ export const portfolioItems = [
     mobileImages: ["chat.png", "login.png", "contacts.png", "search.png", "delete.png"].map((i) =>
       cdnImg(`chatApp/mobile/${i}`)
     ),
-    tags: ["JavaScript", "React/Redux", , "Android", "MongoDB", "Express", "Socket.io"],
+    tags: ["JavaScript", "React/Redux", "Android", "MongoDB", "Express", "Socket.io"],
   },
   {
     title: "Java Moose Game",
