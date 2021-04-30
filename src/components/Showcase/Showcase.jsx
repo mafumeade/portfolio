@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { Link, useParams, useHistory } from "react-router-dom";
 
 import { portfolioItems } from "../../data/portfolioData";
 
@@ -50,7 +51,7 @@ function ItemBody({ item = {} }) {
   );
 }
 
-function Header({ selectedItem, setSelected }) {
+function Header({ selectedItem }) {
   const item = selectedItem || {};
   const { breakpoint } = useWindowDimensions();
 
@@ -59,9 +60,9 @@ function Header({ selectedItem, setSelected }) {
     <div className="header" id="portfolio">
       <div className="btnContainer">
         {selectedItem && (
-          <div className="backBtn" onClick={() => setSelected(null)}>
-            Back
-          </div>
+          <Link to="/">
+            <div className="backBtn">Back</div>
+          </Link>
         )}
       </div>
       <h1>{title}</h1>
@@ -83,16 +84,17 @@ function Header({ selectedItem, setSelected }) {
   );
 }
 
-function ItemCard({ item, selected, setSelected }) {
+function ItemCard({ item, selected }) {
   const selectedClass = selected ? "selected" : "";
 
-  const handleClick = () => {
-    setSelected(item.key);
+  const history = useHistory();
 
+  const handleClick = () => {
     setTimeout(() => {
       const top = document.querySelector(".showcase .header").offsetTop - 50;
       window.scrollTo({ top, behavior: "smooth" });
     }, 0);
+    history.push(`/${item.key}`);
   };
 
   const tags = item.tags.map((tag) => (
@@ -129,17 +131,10 @@ function ItemCard({ item, selected, setSelected }) {
 }
 
 export default function Showcase({ setShowLinks }) {
-  const [selected, setSelected] = useState(null);
+  const { item: selected } = useParams();
   const selectedItem = portfolioItems.filter((i) => i.key === selected)[0];
 
-  const updateSel = (key) => {
-    setSelected(key);
-    setShowLinks(key === null);
-  };
-
-  const cards = portfolioItems.map((i) => (
-    <ItemCard key={i.key + "_card"} item={i} selected={i.key === selected} setSelected={updateSel} />
-  ));
+  const cards = portfolioItems.map((i) => <ItemCard key={i.key + "_card"} item={i} selected={i.key === selected} />);
 
   // Pre load images to prevent pop in on carousels
   useEffect(() => {
@@ -161,7 +156,7 @@ export default function Showcase({ setShowLinks }) {
 
   return (
     <div className="showcase _container">
-      <Header selectedItem={selectedItem} setSelected={updateSel} />
+      <Header selectedItem={selectedItem} s />
       {selected && <ItemBody item={selectedItem} />}
       <div className="cardGrid">{cards}</div>
     </div>

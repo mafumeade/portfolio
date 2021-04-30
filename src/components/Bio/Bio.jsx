@@ -6,7 +6,7 @@ import useWindowDimensions from "../../hooks/windowDims";
 
 import Logo from "./Logo";
 
-export default function Bio({ showLinks }) {
+export default function Bio() {
   const { width } = useWindowDimensions();
 
   const LINKS = coverLinks.map(({ icon, text, shortText, href, bioText, onClick }) => (
@@ -21,12 +21,12 @@ export default function Bio({ showLinks }) {
     <div className="bio _container">
       <div className="bioGrid">
         <h1>Matthew Meade</h1>
-        {showLinks && (
-          <div className="bioImgContainer">
-            <Logo />
-          </div>
-        )}
-        {showLinks && <div className="mainText">{LINKS}</div>}
+
+        <div className="bioImgContainer">
+          <Logo />
+        </div>
+
+        <div className="mainText">{LINKS}</div>
       </div>
     </div>
   );

@@ -1,112 +1,113 @@
-@import 'src/vars.scss';
+@import "src/vars.scss";
 
 .bio {
+  margin-top: 55px;
 
+  .bioGrid {
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  h1 {
+    grid-area: h;
+
+    padding-left: 10px;
+    font-size: 3em;
+    color: $mainColor;
+    background-color: $darker;
+  }
+
+  .bioImgContainer {
+    max-width: 75vw;
+    grid-area: i;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: $mainColor;
+    }
+  }
+
+  @media (max-width: 576px) {
     .bioGrid {
-        column-gap: 10px;
-        row-gap: 10px;
+      display: grid;
+      grid-template-areas:
+        "h"
+        "t";
     }
 
     h1 {
-        grid-area: h;
-
-        padding-left: 10px;
-        font-size: 3em;
-        color: $mainColor;
-        background-color: $darker;
+      text-align: center;
     }
 
     .bioImgContainer {
-        max-width: 75vw;
-        grid-area: i;
-        
-        svg {
-            width: 100%;
-            height: 100%;
-            stroke: $mainColor;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .bioGrid {
-            display: grid;
-            grid-template-areas:
-                'h'
-                't';
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .bioImgContainer {
-            display: none;
-        }
-
-        .mainText {
-            row-gap: 20px;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 576px) and (max-width: 768px) {
-        .bioGrid {
-            display: grid;
-            grid-template-areas:
-                'h'
-                'i'
-                't';
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .bioImgContainer {
-            display: none;
-        }
-
-        .mainText {
-            row-gap: 20px;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .bioGrid {
-            display: grid;
-            grid-template-areas:
-                'i h h '
-                'i t t';
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 75px auto;
-        }
+      display: none;
     }
 
     .mainText {
-        grid-area: t;
-
-        background-color: $darker;
-        padding: 0 10px;
-
-        display: grid;
-        align-items: center;
-
-        color: $white;
-
-        .linkDiv {
-            font-size: 1.5em;
-            a {
-                text-decoration: none;
-                color: $white;
-                svg {
-                    width: 1em;
-                    color: $mainColor;
-                }
-                &:hover {
-                    border-bottom: 2px solid $mainColor;
-                }
-            }
-        }
+      row-gap: 20px;
+      text-align: center;
     }
+  }
+
+  @media (min-width: 576px) and (max-width: 768px) {
+    .bioGrid {
+      display: grid;
+      grid-template-areas:
+        "h"
+        "i"
+        "t";
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .bioImgContainer {
+      display: none;
+    }
+
+    .mainText {
+      row-gap: 20px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .bioGrid {
+      display: grid;
+      grid-template-areas:
+        "i h h "
+        "i t t";
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 75px auto;
+    }
+  }
+
+  .mainText {
+    grid-area: t;
+
+    background-color: $darker;
+    padding: 0 10px;
+
+    display: grid;
+    align-items: center;
+
+    color: $white;
+
+    .linkDiv {
+      font-size: 1.5em;
+      a {
+        text-decoration: none;
+        color: $white;
+        svg {
+          width: 1em;
+          color: $mainColor;
+        }
+        &:hover {
+          border-bottom: 2px solid $mainColor;
+        }
+      }
+    }
+  }
 }

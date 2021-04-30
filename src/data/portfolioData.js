@@ -76,7 +76,7 @@ export const portfolioItems = [
       "quote1.png",
       "quote2.png",
     ].map((i) => cdnImg(`salesApp/desktop/${i}`)),
-    tags: ["JavaScript", "React", "Redux", "SCSS", "MongoDB", "Express", "Heroku"],
+    tags: ["JavaScript", "React/Redux", "SCSS", "MongoDB", "Express", "Heroku"],
   },
   {
     title: "Portfolio",
@@ -86,7 +86,7 @@ export const portfolioItems = [
     // coverImage: cdnImg('portfolio/portfolioCover.png'),
     coverImage: cdnImg("portfolio/coverImage.png"),
     images: [cdnImg("portfolio/coverImage.png")],
-    tags: ["JavaScript", "React", "SCSS", "Netlify", "Markdown", "JSON", "PDF"],
+    tags: ["JavaScript", "React", "SCSS", "Netlify", "Markdown"],
   },
   {
     title: "Android Chat App",
@@ -101,7 +101,7 @@ export const portfolioItems = [
     mobileImages: ["chat.png", "login.png", "contacts.png", "search.png", "delete.png"].map((i) =>
       cdnImg(`chatApp/mobile/${i}`)
     ),
-    tags: ["JavaScript", "React", "Redux", "Android", "MongoDB", "Express", "Socket.io"],
+    tags: ["JavaScript", "React/Redux", , "Android", "MongoDB", "Express", "Socket.io"],
   },
   {
     title: "Java Moose Game",

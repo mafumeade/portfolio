@@ -1,143 +1,157 @@
-@import 'src/vars.scss';
-@import './cardStyles.scss';
+@import "src/vars.scss";
+@import "./cardStyles.scss";
 
 .showcase {
-    padding-top: 10px;
+  padding-top: 10px;
 
-    .header {
-        display: grid;
+  .header {
+    display: grid;
 
-        @media (max-width: 1100px) {
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-areas:
-                'title title title'
-                'btn   links links';
-
-            .linkContainer {
-                text-align: center;
-            }
-        }
-
-        @media (min-width: 1100px) {
-            grid-template-columns: 1fr 2fr 1fr;
-            grid-template-areas: 'btn title links';
-        }
-
-        background-color: $darker;
-
-        margin: 10px 0;
-        padding: 5px;
-        .btnContainer,
-        .linkContainer {
-            display: grid;
-            align-items: center;
-
-            grid-auto-flow: column;
-        }
-
-        .btnContainer {
-            grid-area: btn;
-
-            .backBtn {
-                color: $red;
-                font-size: 20px;
-                text-align: center;
-                // width: 50%;
-                border-radius: 5px;
-                padding-bottom: 2px;
-
-                transition: 0.25s background-color, 0.25s color;
-
-                &:hover {
-                    background-color: $red;
-                    color: $white;
-                }
-            }
-        }
-
-        .linkContainer {
-            color: $mainColor;
-            grid-area: links;
-            font-size: 1.25em;
-            text-align: center;
-        }
-
-        h1 {
-            grid-area: title;
-            color: $mainColor;
-            text-align: center;
-        }
+    a {
+      box-sizing: border-box;
     }
 
-    .showcaseItem {
-        overflow: hidden;
+    a:hover {
+      text-decoration: none;
+      border-top: 3px solid $dark;
+      border-bottom: 3px solid $mainColor;
+      color: inherit;
+    }
 
-        margin-bottom: 20px;
+    @media (max-width: 1100px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "title title title"
+        "btn   links links";
 
-        &.shown {
-            display: grid;
+      .linkContainer {
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-areas: "btn title links";
+    }
+
+    background-color: $darker;
+
+    margin: 10px 0;
+    padding: 5px;
+    .btnContainer,
+    .linkContainer {
+      display: grid;
+      align-items: center;
+
+      grid-auto-flow: column;
+    }
+
+    .btnContainer {
+      grid-area: btn;
+
+      a {
+        border: none !important;
+      }
+
+      .backBtn {
+        color: $red;
+        font-size: 20px;
+        text-align: center;
+        // width: 50%;
+        border-radius: 5px;
+        padding-bottom: 2px;
+
+        transition: 0.25s background-color, 0.25s color;
+        &:hover {
+          background-color: $red;
+          color: $white;
         }
+      }
+    }
 
-        &.hidden {
-            display: none;
-        }
+    .linkContainer {
+      color: $mainColor;
+      grid-area: links;
+      font-size: 1.25em;
+      text-align: center;
+    }
 
-        iframe {
+    h1 {
+      grid-area: title;
+      color: $mainColor;
+      text-align: center;
+    }
+  }
+
+  .showcaseItem {
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    &.shown {
+      display: grid;
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+
+      margin: 0 auto;
+      border: none;
+    }
+
+    .scCarousel {
+      .slide {
+        background: $darker;
+      }
+
+      .carouselPage {
+        &.mobile {
+          $maxHeight: 100vw;
+          max-height: $maxHeight;
+          img,
+          video {
             width: 100%;
-            height: 600px;
-
-            margin: 0 auto;
-            border: none;
+          }
         }
 
-        .scCarousel {
-            .slide {
-                background: $darker;
-            }
-
-            .carouselPage {
-                &.mobile {
-                    $maxHeight: 100vw;
-                    max-height: $maxHeight;
-                    img,
-                    video {
-                        width: 100%;
-                    }
-                }
-
-                &.desktop {
-                    $maxHeight: 500px;
-                    max-height: $maxHeight;
-                    img,
-                    video {
-                        max-height: $maxHeight;
-                        width: auto;
-                    }
-                }
-            }
+        &.desktop {
+          $maxHeight: 500px;
+          max-height: $maxHeight;
+          img,
+          video {
+            max-height: $maxHeight;
+            width: auto;
+          }
         }
-
-        .markdown {
-            h1 {
-                color: $mainColor;
-                padding-bottom: 5px;
-                border-bottom: 2px solid $mainColor;
-            }
-
-            h2 {
-                font-size: 1em;
-            }
-
-            ul {
-                padding-left: 20px;
-            }
-        }
-
-        h2 {
-            padding-top: 2.5em;
-            text-align: center;
-            color: $mainColor;
-            border-bottom: 1px solid $mainColor;
-        }
+      }
     }
+
+    .markdown {
+      h1 {
+        color: $mainColor;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $mainColor;
+      }
+
+      h2 {
+        font-size: 1em;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+    }
+
+    h2 {
+      padding-top: 2.5em;
+      text-align: center;
+      color: $mainColor;
+      border-bottom: 1px solid $mainColor;
+    }
+  }
 }

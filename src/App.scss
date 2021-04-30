@@ -16,10 +16,7 @@ html,
 }
 
 #App {
-  transition-duration: padding 2s;
-  &.showLinks {
-    padding: 50px 10px;
-  }
+  padding: 0 10px;
 }
 
 ::-webkit-scrollbar {

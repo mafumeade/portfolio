@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.scss";
 
 import "@fortawesome/fontawesome-free/js/all";
@@ -12,19 +14,27 @@ import Rainbow from "./components/Rainbow/Rainbow";
 
 function App() {
   const { breakpoint } = useWindowDimensions();
-  const [showLinks, setShowLinks] = useState(true);
   return (
-    <div id="App" className={showLinks ? "showLinks" : ""}>
-      <div bg="dark" variant="dark" className="mainContainer _container">
-        {showLinks && <TopBar breakpoint={breakpoint} />}
+    <Router>
+      <div id="App">
+        <div bg="dark" variant="dark" className="mainContainer _container">
+          <Switch>
+            <Route exact path="/">
+              <TopBar breakpoint={breakpoint} />
 
-        {showLinks && <Bio showLinks={showLinks} />}
+              <Bio />
+              <Showcase />
+            </Route>
 
-        <Showcase setShowLinks={setShowLinks} />
+            <Route exact path="/:item">
+              <Showcase />
+            </Route>
+          </Switch>
 
-        <Rainbow />
+          <Rainbow />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
