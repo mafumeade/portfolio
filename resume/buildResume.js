@@ -103,7 +103,7 @@ async function main() {
     const {
         coverPage,
         references,
-        outputName = 'resume',
+        outputName = 'Matthew_Meade_Resume',
         html,
         pdf = true,
         outputDir = `${__dirname}/output`

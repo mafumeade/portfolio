@@ -149,7 +149,7 @@ export const coverLinks = [
   {
     icon: "fas fa-file-alt",
     text: "Resume",
-    href: "https://MatthewMeade.ca/resume.pdf",
+    href: "https://MatthewMeade.ca/Matthew_Meade_Resume",
     bioText: "Download My Resume",
   },
   {
