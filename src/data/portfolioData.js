@@ -6,6 +6,7 @@ import ticTacToeDescription from "./descriptions/ticTacToe";
 import subToolSubscription from "./descriptions/subsTool";
 import _2048Clone from "./descriptions/2048Clone";
 import qrTransfer from "./descriptions/qrTransfer";
+import homeserver from "./descriptions/homeserver";
 
 export const CDN_PREFIX = "https://cdn.matthewmeade.ca/portfolio";
 export const cdnImg = (p) => `${CDN_PREFIX}/${p}`;
@@ -48,6 +49,15 @@ export const portfolioItems = [
     coverImage: cdnImg("ttc/coverImage.png"),
     images: ["darkTheme.png", "lightTheme.png", "largeGame.png"].map((i) => cdnImg(`ttc/desktop/${i}`)),
     tags: ["JavaScript", "p5.js", "Canvas"],
+  },
+  {
+    title: "Home Server",
+    description: homeserver.trim(),
+    url: "https://github.com/MatthewMeade/homeserver/blob/main/docker-compose.yml",
+    gitHub: "https://github.com/MatthewMeade/QRFileTransfer",
+    tags: ["Docker", "NGINX", "Cloudflare", "NAS"],
+    coverImage: cdnImg("homeserver/cover.png"),
+    images: ["cover.png"].map((i) => cdnImg(`homeserver/${i}`)),
   },
   {
     title: "Sales App",

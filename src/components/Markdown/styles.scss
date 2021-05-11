@@ -1,33 +1,39 @@
-@import 'src/vars.scss';
+@import "src/vars.scss";
 
 .markdown {
-    font-size: 1.1em;
+  font-size: 1.1em;
 
-    border-radius: 5px;
-    background-color: $darker;
-    padding: 5px 10px;
-    color: $white;
+  border-radius: 5px;
+  background-color: $darker;
+  padding: 5px 10px;
+  color: $white;
 
-    // Super hacky custom bullet point colors ¯\_(ツ)_/¯
+  a {
+    text-transform: none;
+    text-decoration: underline;
+    color: skyblue;
+  }
+
+  // Super hacky custom bullet point colors ¯\_(ツ)_/¯
+  ul {
+    margin-top: -10px;
+    list-style: none;
+
     ul {
-        margin-top: -10px;
-        list-style: none;
-
-        ul {
-            margin-top: 0;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        li::before {
-            content: '■ ';
-            color: $mainColor;
-            font-size: 0.5em;
-            vertical-align: middle;
-            position: relative;
-            top: -2px;
-        }
+      margin-top: 0;
     }
+
+    li {
+      margin: 10px 0;
+    }
+
+    li::before {
+      content: "■ ";
+      color: $mainColor;
+      font-size: 0.5em;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+    }
+  }
 }
